@@ -90,6 +90,8 @@ flags.DEFINE_boolean(
 
 FLAGS = flags.FLAGS
 
+ANALOGY_COUNT = 4
+
 
 class Options(object):
     """Options used by our word2vec model."""
@@ -308,8 +310,8 @@ class Word2Vec(object):
         # dist has shape [N, vocab_size].
         dist = tf.matmul(target, nemb, transpose_b=True)
 
-        # For each question (row in dist), find the top 4 words.
-        _, pred_idx = tf.nn.top_k(dist, 4)
+        # For each question (row in dist), find the top ANALOGY_COUNT words.
+        _, pred_idx = tf.nn.top_k(dist, ANALOGY_COUNT)
 
         # Nodes for computing neighbors for a given word according to
         # their cosine distance.
@@ -355,15 +357,12 @@ class Word2Vec(object):
 
         last_words, last_time = initial_words, time.time()
         while True:
-            time.sleep(5)  # Reports our progress once a while.
+            time.sleep(1)  # Reports our progress once a while.
             (epoch, step, words, lr) = self._session.run(
                 [self._epoch, self.global_step, self._words, self._lr])
             now = time.time()
-            last_words, last_time, rate = words, now, (words - last_words) / (
-                now - last_time)
-            print("Epoch %4d Step %8d: lr = %5.3f words/sec = %8.0f\r" % (epoch, step,
-                                                                          lr, rate),
-                  end="")
+            last_words, last_time, rate = words, now, (words - last_words) / (now - last_time)
+            print("Epoch %4d Step %8d: lr = %5.3f words/sec = %8.0f\r" % (epoch, step, lr, rate), end="")
             sys.stdout.flush()
             if epoch != initial_epoch:
                 break
@@ -372,7 +371,7 @@ class Word2Vec(object):
             t.join()
 
     def _predict(self, analogy):
-        """Predict the top 4 answers for analogy questions."""
+        """Predict the top ANALOGY_COUNT answers for analogy questions."""
         idx, = self._session.run([self._analogy_pred_idx], {
             self._analogy_a: analogy[:, 0],
             self._analogy_b: analogy[:, 1],
@@ -384,7 +383,8 @@ class Word2Vec(object):
         """Evaluate analogy questions and reports accuracy."""
 
         # How many questions we get right at precision@1.
-        correct = 0
+        correct = {i: 0 for i in xrange(ANALOGY_COUNT)}
+        skips_map = {i: 0 for i in xrange(ANALOGY_COUNT + 1)}
 
         try:
             total = self._analogy_questions.shape[0]
@@ -398,31 +398,41 @@ class Word2Vec(object):
             idx = self._predict(sub)
             start = limit
             for question in xrange(sub.shape[0]):
-                for j in xrange(4):
+                prio = 0
+                skips = 0
+                for j in xrange(ANALOGY_COUNT):
                     if idx[question, j] == sub[question, 3]:
                         # Bingo! We predicted correctly. E.g., [italy, rome, france, paris].
-                        correct += 1
+                        correct[prio] += 1
                         break
                     elif idx[question, j] in sub[question, :3]:
                         # We need to skip words already in the question.
+                        skips += 1
                         continue
                     else:
                         # The correct label is not the precision@1
-                        break
+                        prio += 1
+                skips_map[skips] += 1
         print()
-        print("Eval %4d/%d accuracy = %4.1f%%" % (correct, total,
-                                                  correct * 100.0 / total))
+        accuracy_list = ' '.join('%4.1f%%' % (correct[i] * 100.0 / total) for i in xrange(ANALOGY_COUNT))
+        total_skips = sum(skips_map.values())
+        skips_list = ' '.join('%4.1f%%' % (skips_map[i] * 100.0 / total_skips) for i in xrange(1, ANALOGY_COUNT + 1))
+        guessed = sum(correct.values())
+        print("Eval %4d/%d accuracy = %4.1f%% [%s] skips [%s]" % (
+            guessed, total, guessed * 100.0 / total, accuracy_list, skips_list
+        ))
 
     def analogy(self, w0, w1, w2):
         """Predict word w3 as in w0:w1 vs w2:w3."""
         w0, w1, w2 = u2b([w0, w1, w2])
         wid = np.array([[self._word2id.get(w, 0) for w in [w0, w1, w2]]])
         idx = self._predict(wid)
-        for c in [self._id2word[i] for i in idx[0, :]]:
-            if c not in [w0, w1, w2]:
+        id_list = idx[0, :]
+        words = [self._id2word[i] for i in id_list]
+        for c in words:
+            # if c not in [w0, w1, w2]:
                 print(b2u(c))
-                break
-        print("unknown")
+        return id_list, [b2u(w) for w in words]
 
     def nearby(self, words, num=20):
         """Prints out nearby words given a list of words."""
