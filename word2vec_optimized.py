@@ -156,13 +156,13 @@ class Options(object):
             self.load_data = True
 
         print("""====================
-Embedding dimensions:   %(emb_dim)s
-Epochs to train:        %(epochs_to_train)s
-Initial learning rate:  %(learning_rate)s
-Negative samples:       %(num_samples)s
-Batch size:             %(batch_size)s
-Window size:            %(window_size)s
-Subsampling threshold:  %(subsample)s
+embedding_size:   %(emb_dim)s
+epochs_to_train:  %(epochs_to_train)s
+learning_rate:    %(learning_rate)s
+num_neg_samples:  %(num_samples)s
+batch_size:       %(batch_size)s
+window_size:      %(window_size)s
+subsample:        %(subsample)s
 ====================""" % self.__dict__)
 
 
@@ -271,7 +271,7 @@ class Word2Vec(object):
         opts = self._options
         with open(os.path.join(opts.save_path, "vocab.txt"), "w") as f:
             for i in xrange(opts.vocab_size):
-                vocab_word = tf.compat.as_text(opts.vocab_words[i]).encode("utf-8")
+                vocab_word = tf.compat.as_text(opts.vocab_words[i])
                 f.write("%s %d\n" % (vocab_word,
                                      opts.vocab_counts[i]))
 
