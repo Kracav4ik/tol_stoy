@@ -52,6 +52,7 @@ flags = tf.app.flags
 flags.DEFINE_string("save_path", "savedata", "Directory to write the model.")
 flags.DEFINE_boolean("load_data", False, "Load data from [save_path] instead of training from scratch (turns off training and makes interactive default ON unless --resume is on).")
 flags.DEFINE_boolean("resume", False, "Whether we should continue training after load.")
+flags.DEFINE_boolean("dry_run", False, "Don't save anything.")
 flags.DEFINE_string(
     "train_data", None,
     "Training data. E.g., unzipped file http://mattmahoney.net/dc/text8.zip.")
@@ -153,6 +154,16 @@ class Options(object):
         # resume implies load_data
         if self.resume:
             self.load_data = True
+
+        print("""====================
+Embedding dimensions:   %(emb_dim)s
+Epochs to train:        %(epochs_to_train)s
+Initial learning rate:  %(learning_rate)s
+Negative samples:       %(num_samples)s
+Batch size:             %(batch_size)s
+Window size:            %(window_size)s
+Subsampling threshold:  %(subsample)s
+====================""" % self.__dict__)
 
 
 # noinspection PyAttributeOutsideInit
@@ -488,7 +499,7 @@ def main(_):
             model.eval()  # Eval analogies.
             print_elapsed("model train epoch %d" % epoch)
         # Perform a final save.
-        if opts.epochs_to_train > 0:
+        if opts.epochs_to_train > 0 and not FLAGS.dry_run:
             model.saver.save(session, model_path, global_step=model.global_step)
             print_elapsed("model saved")
         if opts.interactive:
