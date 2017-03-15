@@ -36,6 +36,10 @@ import sys
 import threading
 import time
 
+global_start = time.time()
+
+# noinspection PyUnresolvedReferences
+import six
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
 import numpy as np
@@ -45,7 +49,9 @@ word2vec = tf.load_op_library(os.path.join(os.path.dirname(os.path.realpath(__fi
 
 flags = tf.app.flags
 
-flags.DEFINE_string("save_path", None, "Directory to write the model.")
+flags.DEFINE_string("save_path", "savedata", "Directory to write the model.")
+flags.DEFINE_boolean("load_data", False, "Load data from [save_path] instead of training from scratch (turns off training and makes interactive default ON unless --resume is on).")
+flags.DEFINE_boolean("resume", False, "Whether we should continue training after load.")
 flags.DEFINE_string(
     "train_data", None,
     "Training data. E.g., unzipped file http://mattmahoney.net/dc/text8.zip.")
@@ -76,7 +82,7 @@ flags.DEFINE_float("subsample", 1e-3,
                    "with higher frequency will be randomly down-sampled. Set "
                    "to 0 to disable.")
 flags.DEFINE_boolean(
-    "interactive", False,
+    "interactive", None,
     "If true, enters an IPython interactive session to play with the trained "
     "model. E.g., try model.analogy(b'france', b'paris', b'russia') and "
     "model.nearby([b'proton', b'elephant', b'maxwell'])")
@@ -134,7 +140,22 @@ class Options(object):
         # The text file for eval.
         self.eval_data = FLAGS.eval_data
 
+        # Mode options
+        self.interactive = FLAGS.interactive
+        self.load_data = FLAGS.load_data
+        self.resume = FLAGS.resume
 
+        # load_data without resume turns off training and turns on intercativity
+        if self.load_data and not self.resume:
+            self.epochs_to_train = 0
+            if self.interactive is None:
+                self.interactive = True
+        # resume implies load_data
+        if self.resume:
+            self.load_data = True
+
+
+# noinspection PyAttributeOutsideInit
 class Word2Vec(object):
     """Word2Vec model (Skipgram)."""
 
@@ -383,23 +404,25 @@ class Word2Vec(object):
 
     def analogy(self, w0, w1, w2):
         """Predict word w3 as in w0:w1 vs w2:w3."""
+        w0, w1, w2 = u2b([w0, w1, w2])
         wid = np.array([[self._word2id.get(w, 0) for w in [w0, w1, w2]]])
         idx = self._predict(wid)
         for c in [self._id2word[i] for i in idx[0, :]]:
             if c not in [w0, w1, w2]:
-                print(c)
+                print(b2u(c))
                 break
         print("unknown")
 
     def nearby(self, words, num=20):
         """Prints out nearby words given a list of words."""
+        words = u2b(words)
         ids = np.array([self._word2id.get(x, 0) for x in words])
         vals, idx = self._session.run(
             [self._nearby_val, self._nearby_idx], {self._nearby_word: ids})
         for i in xrange(len(words)):
-            print("\n%s\n=====================================" % (words[i]))
+            print("\n%s\n=====================================" % (b2u(words[i])))
             for (neighbor, distance) in zip(idx[i, :num], vals[i, :num]):
-                print("%-20s %6.4f" % (self._id2word[neighbor], distance))
+                print("%-20s %6.4f" % (b2u(self._id2word[neighbor]), distance))
 
 
 def _start_shell(local_ns=None):
@@ -412,23 +435,63 @@ def _start_shell(local_ns=None):
     IPython.start_ipython(argv=[], user_ns=user_ns)
 
 
+if six.PY3:
+    def to_utf(u):
+        return bytes(u, 'utf8')
+else:
+    def to_utf(u):
+        return u.encode('utf8')
+
+
+def u2b(s_or_l):
+    if isinstance(s_or_l, six.binary_type):
+        return s_or_l
+    if isinstance(s_or_l, six.text_type):
+        return to_utf(s_or_l)
+    return [u2b(s) for s in s_or_l]
+
+
+def b2u(s_or_l):
+    if isinstance(s_or_l, six.text_type):
+        return s_or_l
+    if isinstance(s_or_l, six.binary_type):
+        return six.text_type(s_or_l, 'utf8')
+    return [b2u(s) for s in s_or_l]
+
+
+t0 = time.time()
+def print_elapsed(msg):
+    global t0
+    t1 = time.time()
+    print("***", msg, "%.2f sec" % (t1 - t0))
+    t0 = t1
+
+
 def main(_):
     """Train a word2vec model."""
-    if not FLAGS.train_data or not FLAGS.eval_data or not FLAGS.save_path:
-        print("--train_data --eval_data and --save_path must be specified.")
+    if not FLAGS.train_data or not FLAGS.eval_data:
+        print("--train_data --eval_data must be specified.")
         sys.exit(1)
     opts = Options()
+    model_path = os.path.join(opts.save_path, "model.ckpt")
     with tf.Graph().as_default(), tf.Session() as session:
         with tf.device("/cpu:0"):
             model = Word2Vec(opts, session)
             model.read_analogies()  # Read analogy questions
-        for _ in xrange(opts.epochs_to_train):
+        print_elapsed("model created")
+        if opts.load_data:
+            model.saver.restore(session, model_path)
+            print_elapsed("model restored")
+        model.eval()  # Eval analogies.
+        for epoch in xrange(opts.epochs_to_train):
             model.train()  # Process one epoch
             model.eval()  # Eval analogies.
+            print_elapsed("model train epoch %d" % epoch)
         # Perform a final save.
-        model.saver.save(session, os.path.join(opts.save_path, "model.ckpt"),
-                         global_step=model.global_step)
-        if FLAGS.interactive:
+        if opts.epochs_to_train > 0:
+            model.saver.save(session, model_path, global_step=model.global_step)
+            print_elapsed("model saved")
+        if opts.interactive:
             # E.g.,
             # [0]: model.analogy(b'france', b'paris', b'russia')
             # [1]: model.nearby([b'proton', b'elephant', b'maxwell'])
@@ -437,3 +500,5 @@ def main(_):
 
 if __name__ == "__main__":
     tf.app.run()
+    print("total time: %.2f" % (time.time() - global_start))
+
