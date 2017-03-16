@@ -38,8 +38,8 @@ import time
 
 global_start = time.time()
 
-# noinspection PyUnresolvedReferences
 import six
+# noinspection PyUnresolvedReferences
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
 import numpy as np
@@ -58,6 +58,7 @@ flags.DEFINE_string(
     "Training data. E.g., unzipped file http://mattmahoney.net/dc/text8.zip.")
 flags.DEFINE_string(
     "eval_data", None, "Analogy questions. "
+    "You can use value like 'name-%d.smth' to read question groups 'name-1.smth', 'name-2.smth' and so on. "
     "See README.md for how to get 'questions-words.txt'.")
 flags.DEFINE_integer("embedding_size", 200, "The embedding dimension size.")
 flags.DEFINE_integer(
@@ -189,22 +190,33 @@ class Word2Vec(object):
                  word ids.
       questions_skipped: questions skipped due to unknown words.
     """
-        questions = []
-        questions_skipped = 0
-        with open(self._options.eval_data, "rb") as analogy_f:
-            for line in analogy_f:
-                if line.startswith(b":"):  # Skip comments.
-                    continue
-                words = line.strip().lower().split(b" ")
-                ids = [self._word2id.get(w.strip()) for w in words]
-                if None in ids or len(ids) != 4:
-                    questions_skipped += 1
-                else:
-                    questions.append(np.array(ids))
-        print("Eval analogy file: ", self._options.eval_data)
-        print("Questions: ", len(questions))
-        print("Skipped: ", questions_skipped)
-        self._analogy_questions = np.array(questions, dtype=np.int32)
+        def read_file(path):
+            questions = []
+            questions_skipped = 0
+            with open(path, "rb") as analogy_f:
+                for line in analogy_f:
+                    line = line.strip()
+                    if not line or line.startswith(b":"):  # Skip comments and empty lines.
+                        continue
+                    words = line.lower().split(b" ")
+                    ids = [self._word2id.get(w.strip()) for w in words]
+                    if None in ids or len(ids) != 4:
+                        questions_skipped += 1
+                    else:
+                        questions.append(np.array(ids))
+            print('Eval analogy file: "%s", questions %4d, skipped %d' % (path, len(questions), questions_skipped))
+            return np.array(questions, dtype=np.int32)
+
+        blocks = []
+        if '%d' in self._options.eval_data:
+            idx = 1
+            while os.path.exists(self._options.eval_data % idx):
+                blocks.append(read_file(self._options.eval_data % idx))
+                idx += 1
+        else:
+            blocks.append(read_file(self._options.eval_data))
+
+        self._analogy_questions = blocks
 
     def build_graph(self):
         """Build the model graph."""
@@ -362,7 +374,7 @@ class Word2Vec(object):
                 [self._epoch, self.global_step, self._words, self._lr])
             now = time.time()
             last_words, last_time, rate = words, now, (words - last_words) / (now - last_time)
-            print("Epoch %4d Step %8d: lr = %5.3f words/sec = %8.0f\r" % (epoch, step, lr, rate), end="")
+            print("Epoch %4d Step %8d: lr = %6.4f words/sec = %8.0f\r" % (epoch, step, lr, rate), end="")
             sys.stdout.flush()
             if epoch != initial_epoch:
                 break
@@ -382,45 +394,58 @@ class Word2Vec(object):
     def eval(self):
         """Evaluate analogy questions and reports accuracy."""
 
-        # How many questions we get right at precision@1.
-        correct = {i: 0 for i in xrange(ANALOGY_COUNT)}
-        skips_map = {i: 0 for i in xrange(ANALOGY_COUNT + 1)}
-
-        try:
-            total = self._analogy_questions.shape[0]
-        except AttributeError as e:
-            raise AttributeError("Need to read analogy questions.")
-
-        start = 0
-        while start < total:
-            limit = start + 2500
-            sub = self._analogy_questions[start:limit, :]
-            idx = self._predict(sub)
-            start = limit
-            for question in xrange(sub.shape[0]):
-                prio = 0
-                skips = 0
-                for j in xrange(ANALOGY_COUNT):
-                    if idx[question, j] == sub[question, 3]:
-                        # Bingo! We predicted correctly. E.g., [italy, rome, france, paris].
-                        correct[prio] += 1
-                        break
-                    elif idx[question, j] in sub[question, :3]:
-                        # We need to skip words already in the question.
-                        skips += 1
-                        continue
-                    else:
-                        # The correct label is not the precision@1
-                        prio += 1
-                skips_map[skips] += 1
         print()
-        accuracy_list = ' '.join('%4.1f%%' % (correct[i] * 100.0 / total) for i in xrange(ANALOGY_COUNT))
-        total_skips = sum(skips_map.values())
-        skips_list = ' '.join('%4.1f%%' % (skips_map[i] * 100.0 / total_skips) for i in xrange(1, ANALOGY_COUNT + 1))
-        guessed = sum(correct.values())
-        print("Eval %4d/%d accuracy = %4.1f%% [%s] skips [%s]" % (
-            guessed, total, guessed * 100.0 / total, accuracy_list, skips_list
-        ))
+        multi_question = len(self._analogy_questions) > 1
+        global_guessed = 0
+        global_total = 0
+        for i in range(len(self._analogy_questions)):
+            questions = self._analogy_questions[i]
+            # How many questions we get right at precision@1.
+            correct = {i: 0 for i in xrange(ANALOGY_COUNT)}
+            skips_map = {i: 0 for i in xrange(ANALOGY_COUNT + 1)}
+
+            try:
+                total = questions.shape[0]
+            except AttributeError as e:
+                raise AttributeError("Need to read analogy questions.")
+
+            start = 0
+            while start < total:
+                limit = start + 2500
+                sub = questions[start:limit, :]
+                idx = self._predict(sub)
+                start = limit
+                for question in xrange(sub.shape[0]):
+                    prio = 0
+                    skips = 0
+                    for j in xrange(ANALOGY_COUNT):
+                        if idx[question, j] == sub[question, 3]:
+                            # Bingo! We predicted correctly. E.g., [italy, rome, france, paris].
+                            correct[prio] += 1
+                            break
+                        elif idx[question, j] in sub[question, :3]:
+                            # We need to skip words already in the question.
+                            skips += 1
+                            continue
+                        else:
+                            # The correct label is not the precision@1
+                            prio += 1
+                    skips_map[skips] += 1
+            accuracy_list = ' '.join('%5.1f%%' % (correct[i] * 100.0 / total) for i in xrange(ANALOGY_COUNT))
+            total_skips = sum(skips_map.values())
+            skips_list = ' '.join('%5.1f%%' % (skips_map[i] * 100.0 / total_skips) for i in xrange(1, ANALOGY_COUNT + 1))
+            guessed = sum(correct.values())
+            suffix = ' for #%d' % (i + 1) if multi_question else ''
+            print("Eval%s %4d/%d accuracy = %5.1f%% [%s] skips [%s]" % (
+                suffix, guessed, total, guessed * 100.0 / total, accuracy_list, skips_list
+            ))
+            global_guessed += guessed
+            global_total += total
+
+        if multi_question:
+            print("Eval global %4d/%d accuracy = %4.1f%%" % (
+                global_guessed, global_total, global_guessed * 100.0 / global_total
+            ))
 
     def analogy(self, w0, w1, w2):
         """Predict word w3 as in w0:w1 vs w2:w3."""
