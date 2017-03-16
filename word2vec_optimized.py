@@ -49,6 +49,16 @@ word2vec = tf.load_op_library(os.path.join(os.path.dirname(os.path.realpath(__fi
 
 flags = tf.app.flags
 
+
+log_file = open('train_log.txt', 'a')
+def output(*args):
+    print(*args)
+    line = ' '.join(str(s) for s in args)
+    log_file.write(line)
+    log_file.write('\n')
+    log_file.flush()
+
+
 flags.DEFINE_string("save_path", "savedata", "Directory to write the model.")
 flags.DEFINE_boolean("load_data", False, "Load data from [save_path] instead of training from scratch (turns off training and makes interactive default ON unless --resume is on).")
 flags.DEFINE_boolean("resume", False, "Whether we should continue training after load.")
@@ -158,7 +168,7 @@ class Options(object):
         if self.resume:
             self.load_data = True
 
-        print("""====================
+        output("""====================
 embedding_size:   %(emb_dim)s
 epochs_to_train:  %(epochs_to_train)s
 learning_rate:    %(learning_rate)s
@@ -204,7 +214,7 @@ class Word2Vec(object):
                         questions_skipped += 1
                     else:
                         questions.append(np.array(ids))
-            print('Eval analogy file: "%s", questions %4d, skipped %d' % (path, len(questions), questions_skipped))
+            output('Eval analogy file: "%s", questions %4d, skipped %d' % (path, len(questions), questions_skipped))
             return np.array(questions, dtype=np.int32)
 
         blocks = []
@@ -232,9 +242,9 @@ class Word2Vec(object):
         (opts.vocab_words, opts.vocab_counts,
          opts.words_per_epoch) = self._session.run([words, counts, words_per_epoch])
         opts.vocab_size = len(opts.vocab_words)
-        print("Data file: ", opts.train_data)
-        print("Vocab size: ", opts.vocab_size - 1, " + UNK")
-        print("Words per epoch: ", opts.words_per_epoch)
+        output("Data file:", opts.train_data)
+        output("Vocab size:", opts.vocab_size - 1, "+ UNK")
+        output("Words per epoch:", opts.words_per_epoch)
 
         self._id2word = opts.vocab_words
         for i, w in enumerate(self._id2word):
@@ -436,14 +446,14 @@ class Word2Vec(object):
             skips_list = ' '.join('%5.1f%%' % (skips_map[i] * 100.0 / total_skips) for i in xrange(1, ANALOGY_COUNT + 1))
             guessed = sum(correct.values())
             suffix = ' for #%d' % (i + 1) if multi_question else ''
-            print("Eval%s %4d/%d accuracy = %5.1f%% [%s] skips [%s]" % (
+            output("Eval%s %4d/%d accuracy = %5.1f%% [%s] skips [%s]" % (
                 suffix, guessed, total, guessed * 100.0 / total, accuracy_list, skips_list
             ))
             global_guessed += guessed
             global_total += total
 
         if multi_question:
-            print("Eval global %4d/%d accuracy = %4.1f%%" % (
+            output("Eval global %4d/%d accuracy = %4.1f%%" % (
                 global_guessed, global_total, global_guessed * 100.0 / global_total
             ))
 
@@ -545,6 +555,9 @@ def main(_):
 
 
 if __name__ == "__main__":
+    import sys
+    output(*(['$', sys.executable] + sys.argv))
     tf.app.run()
+    log_file.close()
     print("total time: %.2f" % (time.time() - global_start))
 
