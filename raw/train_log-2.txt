@@ -1,0 +1,830 @@
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 300 --learning_rate 0.005 
+====================
+embedding_size:   300
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.69 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20120: lr = 0.0046 words/sec =     6444
+Eval for #1   55/420 accuracy =  13.1% [  8.1%   2.9%   1.7%   0.5%] skips [ 36.0%   0.0%   0.0%   0.0%]
+Eval for #2   81/380 accuracy =  21.3% [  9.5%   4.2%   7.1%   0.5%] skips [ 51.1%   0.8%   0.0%   0.0%]
+Eval for #3    7/306 accuracy =   2.3% [  1.0%   1.3%   0.0%   0.0%] skips [ 44.8%   1.0%   0.0%   0.0%]
+Eval for #4    7/240 accuracy =   2.9% [  0.0%   1.2%   1.2%   0.4%] skips [ 30.0%   0.8%   0.0%   0.0%]
+Eval global  150/1346 accuracy = 11.1%
+*** model train epoch 0 108.20 sec
+Epoch    2 Step    40234: lr = 0.0042 words/sec =     2013
+Eval for #1  228/420 accuracy =  54.3% [ 35.7%   9.5%   6.9%   2.1%] skips [ 33.3%   0.0%   0.0%   0.0%]
+Eval for #2   94/380 accuracy =  24.7% [ 20.0%   3.4%   0.5%   0.8%] skips [ 48.2%   3.4%   0.0%   0.0%]
+Eval for #3   15/306 accuracy =   4.9% [  1.6%   0.3%   2.3%   0.7%] skips [ 44.8%   1.6%   0.0%   0.0%]
+Eval for #4   17/240 accuracy =   7.1% [  2.5%   2.9%   1.7%   0.0%] skips [ 54.6%   2.1%   0.0%   0.0%]
+Eval global  354/1346 accuracy = 26.3%
+*** model train epoch 1 111.57 sec
+Epoch    3 Step    60376: lr = 0.0038 words/sec =    18054
+Eval for #1  342/420 accuracy =  81.4% [ 65.7%   7.9%   4.0%   3.8%] skips [ 19.3%   0.0%   0.0%   0.0%]
+Eval for #2  135/380 accuracy =  35.5% [ 25.3%   5.3%   3.2%   1.8%] skips [ 49.7%   4.5%   0.0%   0.0%]
+Eval for #3   37/306 accuracy =  12.1% [  4.6%   2.9%   2.9%   1.6%] skips [ 42.8%   3.3%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  5.4%   3.8%   2.5%   0.0%] skips [ 66.7%   0.8%   0.0%   0.0%]
+Eval global  542/1346 accuracy = 40.3%
+*** model train epoch 2 100.05 sec
+Epoch    4 Step    80503: lr = 0.0034 words/sec =     1984
+Eval for #1  394/420 accuracy =  93.8% [ 78.3%   6.9%   7.6%   1.0%] skips [ 12.4%   0.2%   0.0%   0.0%]
+Eval for #2  154/380 accuracy =  40.5% [ 30.0%   5.3%   3.9%   1.3%] skips [ 51.6%   5.8%   0.0%   0.0%]
+Eval for #3   54/306 accuracy =  17.6% [  8.8%   3.6%   2.3%   2.9%] skips [ 46.1%   5.6%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [  8.8%   2.5%   3.3%   0.4%] skips [ 70.8%   1.2%   0.0%   0.0%]
+Eval global  638/1346 accuracy = 47.4%
+*** model train epoch 3 99.05 sec
+Epoch    5 Step   100643: lr = 0.0030 words/sec =     1520
+Eval for #1  405/420 accuracy =  96.4% [ 84.8%   7.4%   3.1%   1.2%] skips [ 10.5%   0.0%   0.0%   0.0%]
+Eval for #2  160/380 accuracy =  42.1% [ 31.8%   6.1%   2.9%   1.3%] skips [ 52.6%   7.4%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 12.1%   3.9%   3.9%   1.0%] skips [ 53.6%   5.2%   0.0%   0.0%]
+Eval for #4   41/240 accuracy =  17.1% [ 12.1%   3.8%   1.2%   0.0%] skips [ 75.4%   2.1%   0.0%   0.0%]
+Eval global  670/1346 accuracy = 49.8%
+*** model train epoch 4 102.75 sec
+Epoch    6 Step   120766: lr = 0.0027 words/sec =     1987
+Eval for #1  411/420 accuracy =  97.9% [ 90.0%   5.0%   2.9%   0.0%] skips [ 10.2%   0.0%   0.0%   0.0%]
+Eval for #2  167/380 accuracy =  43.9% [ 34.5%   5.0%   3.7%   0.8%] skips [ 56.1%   7.1%   0.0%   0.0%]
+Eval for #3   62/306 accuracy =  20.3% [ 10.8%   6.9%   2.3%   0.3%] skips [ 60.1%   6.9%   0.0%   0.0%]
+Eval for #4   43/240 accuracy =  17.9% [ 12.1%   3.8%   1.7%   0.4%] skips [ 80.0%   2.9%   0.0%   0.0%]
+Eval global  683/1346 accuracy = 50.7%
+*** model train epoch 5 108.00 sec
+Epoch    7 Step   140914: lr = 0.0023 words/sec =     6519
+Eval for #1  414/420 accuracy =  98.6% [ 92.4%   4.3%   1.9%   0.0%] skips [ 11.2%   0.0%   0.0%   0.0%]
+Eval for #2  173/380 accuracy =  45.5% [ 34.7%   5.5%   4.5%   0.8%] skips [ 57.4%   7.6%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 12.1%   6.2%   2.6%   0.7%] skips [ 59.8%   7.8%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 10.0%   5.0%   1.2%   0.0%] skips [ 81.7%   4.6%   0.0%   0.0%]
+Eval global  692/1346 accuracy = 51.4%
+*** model train epoch 6 99.44 sec
+Epoch    8 Step   161030: lr = 0.0019 words/sec =    18455
+Eval for #1  419/420 accuracy =  99.8% [ 94.8%   3.3%   0.7%   1.0%] skips [ 11.4%   0.0%   0.0%   0.0%]
+Eval for #2  173/380 accuracy =  45.5% [ 35.0%   6.6%   2.9%   1.1%] skips [ 57.4%   8.9%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 11.8%   4.9%   3.3%   1.0%] skips [ 61.8%   9.2%   0.0%   0.0%]
+Eval for #4   38/240 accuracy =  15.8% [ 10.4%   3.8%   1.7%   0.0%] skips [ 82.1%   5.8%   0.0%   0.0%]
+Eval global  694/1346 accuracy = 51.6%
+*** model train epoch 7 94.33 sec
+Epoch    9 Step   181192: lr = 0.0015 words/sec =    11933
+Eval for #1  419/420 accuracy =  99.8% [ 95.5%   3.6%   0.5%   0.2%] skips [ 11.7%   0.0%   0.0%   0.0%]
+Eval for #2  174/380 accuracy =  45.8% [ 36.3%   5.3%   3.4%   0.8%] skips [ 56.8%  10.8%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 11.4%   5.6%   3.3%   0.7%] skips [ 64.4%   9.5%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 10.4%   3.3%   1.2%   0.0%] skips [ 82.9%   6.7%   0.0%   0.0%]
+Eval global  693/1346 accuracy = 51.5%
+*** model train epoch 8 94.84 sec
+Epoch   10 Step   201334: lr = 0.0011 words/sec =     4003
+Eval for #1  420/420 accuracy = 100.0% [ 95.7%   3.8%   0.0%   0.5%] skips [ 12.1%   0.0%   0.0%   0.0%]
+Eval for #2  175/380 accuracy =  46.1% [ 35.5%   6.6%   3.4%   0.5%] skips [ 59.7%  10.5%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 11.4%   6.9%   2.6%   1.3%] skips [ 64.4%  10.8%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 10.8%   2.9%   1.2%   0.0%] skips [ 84.2%   6.7%   0.0%   0.0%]
+Eval global  699/1346 accuracy = 51.9%
+*** model train epoch 9 96.44 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 125 --learning_rate 0.005   
+====================
+embedding_size:   125
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.60 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20141: lr = 0.0046 words/sec =    32625
+Eval for #1   69/420 accuracy =  16.4% [  6.9%   5.7%   3.1%   0.7%] skips [ 38.8%   0.0%   0.0%   0.0%]
+Eval for #2   75/380 accuracy =  19.7% [ 10.8%   6.3%   2.4%   0.3%] skips [ 54.5%   0.8%   0.0%   0.0%]
+Eval for #3    6/306 accuracy =   2.0% [  1.0%   0.7%   0.3%   0.0%] skips [ 48.4%   1.6%   0.0%   0.0%]
+Eval for #4    5/240 accuracy =   2.1% [  0.4%   1.2%   0.4%   0.0%] skips [ 30.4%   1.7%   0.0%   0.0%]
+Eval global  155/1346 accuracy = 11.5%
+*** model train epoch 0 53.46 sec
+Epoch    2 Step    40298: lr = 0.0042 words/sec =    33335
+Eval for #1  244/420 accuracy =  58.1% [ 39.8%   8.3%   6.9%   3.1%] skips [ 34.3%   0.0%   0.0%   0.0%]
+Eval for #2   99/380 accuracy =  26.1% [ 20.8%   2.9%   1.8%   0.5%] skips [ 48.4%   3.9%   0.0%   0.0%]
+Eval for #3   15/306 accuracy =   4.9% [  2.3%   0.3%   2.3%   0.0%] skips [ 48.0%   2.3%   0.0%   0.0%]
+Eval for #4   17/240 accuracy =   7.1% [  2.9%   2.9%   1.2%   0.0%] skips [ 57.5%   3.3%   0.0%   0.0%]
+Eval global  375/1346 accuracy = 27.9%
+*** model train epoch 1 52.30 sec
+Epoch    3 Step    60466: lr = 0.0038 words/sec =    25624
+Eval for #1  346/420 accuracy =  82.4% [ 65.2%   9.3%   6.0%   1.9%] skips [ 20.2%   0.0%   0.0%   0.0%]
+Eval for #2  138/380 accuracy =  36.3% [ 26.3%   3.9%   3.9%   2.1%] skips [ 49.7%   5.0%   0.0%   0.0%]
+Eval for #3   35/306 accuracy =  11.4% [  6.2%   2.0%   2.6%   0.7%] skips [ 45.4%   3.9%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  5.0%   3.3%   1.7%   0.4%] skips [ 67.5%   0.8%   0.0%   0.0%]
+Eval global  544/1346 accuracy = 40.4%
+*** model train epoch 2 52.24 sec
+Epoch    4 Step    80628: lr = 0.0034 words/sec =    31460
+Eval for #1  393/420 accuracy =  93.6% [ 80.0%   7.6%   5.2%   0.7%] skips [ 13.6%   0.2%   0.0%   0.0%]
+Eval for #2  160/380 accuracy =  42.1% [ 30.3%   6.3%   3.7%   1.8%] skips [ 49.7%   7.6%   0.0%   0.0%]
+Eval for #3   51/306 accuracy =  16.7% [  8.8%   4.9%   1.6%   1.3%] skips [ 47.1%   6.2%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [  8.8%   4.2%   2.1%   0.0%] skips [ 70.8%   1.2%   0.0%   0.0%]
+Eval global  640/1346 accuracy = 47.5%
+*** model train epoch 3 52.37 sec
+Epoch    5 Step   100800: lr = 0.0030 words/sec =    24000
+Eval for #1  404/420 accuracy =  96.2% [ 85.7%   6.7%   3.6%   0.2%] skips [ 11.9%   0.0%   0.0%   0.0%]
+Eval for #2  160/380 accuracy =  42.1% [ 32.4%   6.8%   2.4%   0.5%] skips [ 51.8%   8.2%   0.0%   0.0%]
+Eval for #3   59/306 accuracy =  19.3% [ 10.5%   4.6%   2.9%   1.3%] skips [ 53.6%   5.9%   0.0%   0.0%]
+Eval for #4   41/240 accuracy =  17.1% [ 11.2%   4.6%   1.2%   0.0%] skips [ 75.8%   1.7%   0.0%   0.0%]
+Eval global  664/1346 accuracy = 49.3%
+*** model train epoch 4 52.29 sec
+Epoch    6 Step   120961: lr = 0.0027 words/sec =    26051
+Eval for #1  412/420 accuracy =  98.1% [ 88.3%   6.4%   2.1%   1.2%] skips [ 10.5%   0.0%   0.0%   0.0%]
+Eval for #2  166/380 accuracy =  43.7% [ 34.5%   5.5%   2.9%   0.8%] skips [ 55.3%   7.4%   0.0%   0.0%]
+Eval for #3   62/306 accuracy =  20.3% [ 10.5%   5.6%   3.9%   0.3%] skips [ 59.2%   7.2%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 12.5%   1.7%   2.1%   0.0%] skips [ 81.7%   2.5%   0.0%   0.0%]
+Eval global  679/1346 accuracy = 50.4%
+*** model train epoch 5 52.46 sec
+Epoch    7 Step   141131: lr = 0.0023 words/sec =    23158
+Eval for #1  415/420 accuracy =  98.8% [ 92.1%   4.0%   1.4%   1.2%] skips [ 10.7%   0.0%   0.0%   0.0%]
+Eval for #2  170/380 accuracy =  44.7% [ 35.0%   6.3%   2.6%   0.8%] skips [ 56.3%   7.4%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 12.1%   5.2%   3.9%   1.0%] skips [ 60.1%   8.5%   0.0%   0.0%]
+Eval for #4   42/240 accuracy =  17.5% [ 10.8%   3.8%   2.9%   0.0%] skips [ 81.7%   4.6%   0.0%   0.0%]
+Eval global  695/1346 accuracy = 51.6%
+*** model train epoch 6 52.29 sec
+Epoch    8 Step   161284: lr = 0.0019 words/sec =    30550
+Eval for #1  419/420 accuracy =  99.8% [ 94.0%   3.6%   1.7%   0.5%] skips [ 10.0%   0.0%   0.0%   0.0%]
+Eval for #2  168/380 accuracy =  44.2% [ 34.5%   6.3%   2.1%   1.3%] skips [ 57.4%   8.4%   0.0%   0.0%]
+Eval for #3   63/306 accuracy =  20.6% [ 11.4%   5.2%   3.3%   0.7%] skips [ 63.4%   8.5%   0.0%   0.0%]
+Eval for #4   40/240 accuracy =  16.7% [ 10.4%   4.2%   2.1%   0.0%] skips [ 83.3%   5.4%   0.0%   0.0%]
+Eval global  690/1346 accuracy = 51.3%
+*** model train epoch 7 52.12 sec
+Epoch    9 Step   181463: lr = 0.0015 words/sec =     2529
+Eval for #1  419/420 accuracy =  99.8% [ 94.5%   4.5%   0.5%   0.2%] skips [ 10.2%   0.0%   0.0%   0.0%]
+Eval for #2  174/380 accuracy =  45.8% [ 35.3%   6.1%   3.4%   1.1%] skips [ 57.1%   9.2%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 11.1%   5.9%   3.3%   1.0%] skips [ 64.1%   9.5%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 10.8%   3.8%   1.7%   0.0%] skips [ 82.9%   6.7%   0.0%   0.0%]
+Eval global  697/1346 accuracy = 51.8%
+*** model train epoch 8 53.42 sec
+Epoch   10 Step   201641: lr = 0.0011 words/sec =    25886
+Eval for #1  420/420 accuracy = 100.0% [ 95.0%   3.8%   0.7%   0.5%] skips [ 10.7%   0.0%   0.0%   0.0%]
+Eval for #2  176/380 accuracy =  46.3% [ 36.1%   6.1%   3.9%   0.3%] skips [ 58.4%   9.2%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 12.1%   6.2%   3.3%   0.0%] skips [ 64.7%   9.8%   0.0%   0.0%]
+Eval for #4   38/240 accuracy =  15.8% [ 10.0%   4.6%   1.2%   0.0%] skips [ 83.3%   6.7%   0.0%   0.0%]
+Eval global  700/1346 accuracy = 52.0%
+*** model train epoch 9 52.27 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 20 --embedding_size 125 --learning_rate 0.005 
+====================
+embedding_size:   125
+epochs_to_train:  20
+learning_rate:    0.005
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.61 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20151: lr = 0.0048 words/sec =    11941
+Eval for #1   73/420 accuracy =  17.4% [  7.1%   6.2%   3.1%   1.0%] skips [ 40.7%   0.0%   0.0%   0.0%]
+Eval for #2   74/380 accuracy =  19.5% [  7.4%   5.8%   5.5%   0.8%] skips [ 51.8%   1.3%   0.0%   0.0%]
+Eval for #3    4/306 accuracy =   1.3% [  0.7%   0.7%   0.0%   0.0%] skips [ 47.7%   1.3%   0.0%   0.0%]
+Eval for #4    6/240 accuracy =   2.5% [  0.4%   1.7%   0.4%   0.0%] skips [ 31.2%   1.7%   0.0%   0.0%]
+Eval global  157/1346 accuracy = 11.7%
+*** model train epoch 0 54.54 sec
+Epoch    2 Step    40288: lr = 0.0046 words/sec =    17449
+Eval for #1  236/420 accuracy =  56.2% [ 40.2%   8.3%   6.0%   1.7%] skips [ 32.4%   0.0%   0.0%   0.0%]
+Eval for #2   97/380 accuracy =  25.5% [ 21.1%   3.4%   0.8%   0.3%] skips [ 50.8%   4.2%   0.0%   0.0%]
+Eval for #3   15/306 accuracy =   4.9% [  2.3%   0.7%   1.3%   0.7%] skips [ 46.1%   2.9%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  2.9%   1.7%   3.3%   0.0%] skips [ 59.2%   2.9%   0.0%   0.0%]
+Eval global  367/1346 accuracy = 27.3%
+*** model train epoch 1 53.14 sec
+Epoch    3 Step    60455: lr = 0.0044 words/sec =     4524
+Eval for #1  362/420 accuracy =  86.2% [ 69.0%   7.6%   6.9%   2.6%] skips [ 17.1%   0.0%   0.0%   0.0%]
+Eval for #2  139/380 accuracy =  36.6% [ 26.6%   6.1%   3.4%   0.5%] skips [ 49.7%   4.5%   0.0%   0.0%]
+Eval for #3   41/306 accuracy =  13.4% [  6.2%   4.6%   1.6%   1.0%] skips [ 44.1%   3.9%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  6.2%   3.8%   0.8%   0.0%] skips [ 67.1%   1.2%   0.0%   0.0%]
+Eval global  568/1346 accuracy = 42.2%
+*** model train epoch 2 53.41 sec
+Epoch    4 Step    80612: lr = 0.0042 words/sec =    12006
+Eval for #1  394/420 accuracy =  93.8% [ 83.6%   6.9%   3.1%   0.2%] skips [ 11.2%   0.2%   0.0%   0.0%]
+Eval for #2  160/380 accuracy =  42.1% [ 32.1%   4.2%   4.2%   1.6%] skips [ 50.5%   7.4%   0.0%   0.0%]
+Eval for #3   55/306 accuracy =  18.0% [  9.5%   4.2%   2.9%   1.3%] skips [ 50.3%   6.2%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 10.8%   2.5%   1.2%   0.4%] skips [ 72.1%   1.2%   0.0%   0.0%]
+Eval global  645/1346 accuracy = 47.9%
+*** model train epoch 3 53.47 sec
+Epoch    5 Step   100777: lr = 0.0040 words/sec =     7540
+Eval for #1  402/420 accuracy =  95.7% [ 89.0%   3.3%   2.6%   0.7%] skips [ 10.5%   0.0%   0.0%   0.0%]
+Eval for #2  161/380 accuracy =  42.4% [ 33.2%   5.0%   1.8%   2.4%] skips [ 52.9%   9.5%   0.0%   0.0%]
+Eval for #3   63/306 accuracy =  20.6% [ 10.1%   5.9%   3.6%   1.0%] skips [ 55.9%   8.5%   0.0%   0.0%]
+Eval for #4   38/240 accuracy =  15.8% [ 11.7%   1.7%   2.5%   0.0%] skips [ 80.8%   3.3%   0.0%   0.0%]
+Eval global  664/1346 accuracy = 49.3%
+*** model train epoch 4 53.18 sec
+Epoch    6 Step   120939: lr = 0.0038 words/sec =    24565
+Eval for #1  411/420 accuracy =  97.9% [ 91.2%   4.5%   1.9%   0.2%] skips [ 12.9%   0.0%   0.0%   0.0%]
+Eval for #2  172/380 accuracy =  45.3% [ 34.5%   6.3%   3.2%   1.3%] skips [ 54.2%  10.3%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 12.1%   5.6%   2.3%   1.6%] skips [ 62.1%  10.1%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [  9.6%   3.3%   3.3%   0.0%] skips [ 83.3%   5.0%   0.0%   0.0%]
+Eval global  688/1346 accuracy = 51.1%
+*** model train epoch 5 52.44 sec
+Epoch    7 Step   141115: lr = 0.0036 words/sec =    30702
+Eval for #1  418/420 accuracy =  99.5% [ 94.3%   3.1%   1.4%   0.7%] skips [ 13.6%   0.0%   0.0%   0.0%]
+Eval for #2  169/380 accuracy =  44.5% [ 33.2%   6.8%   3.7%   0.8%] skips [ 56.6%  11.6%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 13.1%   5.2%   2.6%   0.3%] skips [ 62.4%  11.8%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [ 11.2%   2.5%   1.7%   0.0%] skips [ 85.0%   6.2%   0.0%   0.0%]
+Eval global  689/1346 accuracy = 51.2%
+*** model train epoch 6 52.46 sec
+Epoch    8 Step   161271: lr = 0.0034 words/sec =    30050
+Eval for #1  419/420 accuracy =  99.8% [ 96.0%   2.9%   1.0%   0.0%] skips [ 13.1%   0.0%   0.0%   0.0%]
+Eval for #2  169/380 accuracy =  44.5% [ 32.4%   6.6%   4.5%   1.1%] skips [ 55.5%  14.5%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 11.8%   6.9%   2.6%   0.3%] skips [ 63.4%  13.1%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 10.4%   3.8%   2.1%   0.0%] skips [ 84.6%   9.2%   0.0%   0.0%]
+Eval global  693/1346 accuracy = 51.5%
+*** model train epoch 7 52.28 sec
+Epoch    9 Step   181459: lr = 0.0032 words/sec =     5985
+Eval for #1  418/420 accuracy =  99.5% [ 96.0%   3.3%   0.2%   0.0%] skips [ 13.8%   0.5%   0.0%   0.0%]
+Eval for #2  179/380 accuracy =  47.1% [ 35.3%   7.6%   2.9%   1.3%] skips [ 60.0%  14.7%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 12.1%   6.5%   3.3%   0.3%] skips [ 64.4%  16.3%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [ 11.7%   1.7%   2.1%   0.0%] skips [ 82.9%  12.9%   0.0%   0.0%]
+Eval global  702/1346 accuracy = 52.2%
+*** model train epoch 8 53.33 sec
+Epoch   10 Step   201629: lr = 0.0030 words/sec =    28364
+Eval for #1  419/420 accuracy =  99.8% [ 96.9%   2.1%   0.5%   0.2%] skips [ 15.0%   1.0%   0.0%   0.0%]
+Eval for #2  172/380 accuracy =  45.3% [ 35.0%   7.1%   2.1%   1.1%] skips [ 61.8%  15.5%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 12.4%   6.9%   2.6%   0.3%] skips [ 67.6%  16.7%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [ 11.7%   2.5%   1.2%   0.0%] skips [ 84.2%  13.3%   0.0%   0.0%]
+Eval global  696/1346 accuracy = 51.7%
+*** model train epoch 9 53.37 sec
+Epoch   11 Step   221794: lr = 0.0029 words/sec =     4484
+Eval for #1  418/420 accuracy =  99.5% [ 96.7%   2.4%   0.5%   0.0%] skips [ 18.6%   1.2%   0.0%   0.0%]
+Eval for #2  179/380 accuracy =  47.1% [ 35.8%   8.7%   2.1%   0.5%] skips [ 62.6%  16.6%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 14.1%   4.9%   4.2%   0.0%] skips [ 66.7%  18.0%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 11.2%   2.5%   1.2%   0.0%] skips [ 80.8%  17.1%   0.0%   0.0%]
+Eval global  704/1346 accuracy = 52.3%
+*** model train epoch 10 53.35 sec
+Epoch   12 Step   241952: lr = 0.0027 words/sec =    29580
+Eval for #1  416/420 accuracy =  99.0% [ 96.0%   1.9%   1.0%   0.2%] skips [ 17.4%   1.2%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 37.4%   7.1%   4.2%   0.3%] skips [ 61.3%  18.9%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 16.3%   4.2%   3.3%   0.3%] skips [ 67.6%  19.0%   0.0%   0.0%]
+Eval for #4   38/240 accuracy =  15.8% [ 10.8%   4.6%   0.4%   0.0%] skips [ 77.9%  20.0%   0.0%   0.0%]
+Eval global  714/1346 accuracy = 53.0%
+*** model train epoch 11 52.30 sec
+Epoch   13 Step   262115: lr = 0.0025 words/sec =     3000
+Eval for #1  417/420 accuracy =  99.3% [ 95.5%   3.3%   0.2%   0.2%] skips [ 19.3%   1.2%   0.0%   0.0%]
+Eval for #2  184/380 accuracy =  48.4% [ 37.9%   7.6%   2.9%   0.0%] skips [ 62.1%  19.5%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 17.6%   2.3%   3.3%   0.3%] skips [ 69.3%  19.0%   0.0%   0.0%]
+Eval for #4   40/240 accuracy =  16.7% [ 10.4%   4.2%   2.1%   0.0%] skips [ 75.8%  22.9%   0.0%   0.0%]
+Eval global  713/1346 accuracy = 53.0%
+*** model train epoch 12 53.32 sec
+Epoch   14 Step   282280: lr = 0.0023 words/sec =    20893
+Eval for #1  414/420 accuracy =  98.6% [ 95.2%   3.1%   0.2%   0.0%] skips [ 18.6%   1.2%   0.0%   0.0%]
+Eval for #2  180/380 accuracy =  47.4% [ 38.9%   6.3%   2.1%   0.0%] skips [ 63.4%  21.1%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 17.3%   2.9%   2.9%   0.0%] skips [ 69.6%  19.9%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 10.8%   3.8%   1.7%   0.0%] skips [ 72.1%  26.7%   0.0%   0.0%]
+Eval global  704/1346 accuracy = 52.3%
+*** model train epoch 13 52.54 sec
+Epoch   15 Step   302451: lr = 0.0021 words/sec =    27992
+Eval for #1  414/420 accuracy =  98.6% [ 96.0%   1.9%   0.5%   0.2%] skips [ 22.1%   1.2%   0.0%   0.0%]
+Eval for #2  177/380 accuracy =  46.6% [ 37.6%   6.6%   2.4%   0.0%] skips [ 61.3%  22.4%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 16.3%   4.2%   2.6%   0.3%] skips [ 67.3%  21.9%   0.0%   0.0%]
+Eval for #4   41/240 accuracy =  17.1% [ 11.2%   3.8%   2.1%   0.0%] skips [ 71.7%  27.5%   0.0%   0.0%]
+Eval global  704/1346 accuracy = 52.3%
+*** model train epoch 14 52.31 sec
+Epoch   16 Step   322613: lr = 0.0019 words/sec =    25980
+Eval for #1  412/420 accuracy =  98.1% [ 95.7%   2.1%   0.0%   0.2%] skips [ 21.4%   1.2%   0.0%   0.0%]
+Eval for #2  179/380 accuracy =  47.1% [ 38.2%   6.6%   2.1%   0.3%] skips [ 61.1%  24.2%   0.0%   0.0%]
+Eval for #3   69/306 accuracy =  22.5% [ 16.3%   3.3%   2.6%   0.3%] skips [ 68.0%  21.9%   0.0%   0.0%]
+Eval for #4   42/240 accuracy =  17.5% [ 11.2%   3.3%   2.9%   0.0%] skips [ 70.4%  28.8%   0.0%   0.0%]
+Eval global  702/1346 accuracy = 52.2%
+*** model train epoch 15 53.32 sec
+Epoch   17 Step   342780: lr = 0.0017 words/sec =     6016
+Eval for #1  411/420 accuracy =  97.9% [ 95.7%   1.4%   0.7%   0.0%] skips [ 23.1%   1.4%   0.0%   0.0%]
+Eval for #2  177/380 accuracy =  46.6% [ 37.4%   7.1%   2.1%   0.0%] skips [ 60.3%  25.8%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 16.3%   3.3%   3.3%   0.3%] skips [ 66.3%  24.8%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 11.2%   3.8%   1.2%   0.0%] skips [ 69.2%  29.6%   0.0%   0.0%]
+Eval global  698/1346 accuracy = 51.9%
+*** model train epoch 16 53.28 sec
+Epoch   18 Step   362952: lr = 0.0015 words/sec =     6027
+Eval for #1  410/420 accuracy =  97.6% [ 95.7%   1.7%   0.0%   0.2%] skips [ 24.5%   1.4%   0.0%   0.0%]
+Eval for #2  172/380 accuracy =  45.3% [ 37.4%   6.6%   1.3%   0.0%] skips [ 60.5%  26.1%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 16.0%   3.3%   1.6%   0.0%] skips [ 66.0%  25.5%   0.0%   0.0%]
+Eval for #4   43/240 accuracy =  17.9% [ 10.4%   3.3%   4.2%   0.0%] skips [ 67.5%  31.2%   0.0%   0.0%]
+Eval global  689/1346 accuracy = 51.2%
+*** model train epoch 17 53.52 sec
+Epoch   19 Step   383105: lr = 0.0013 words/sec =     3471
+Eval for #1  410/420 accuracy =  97.6% [ 96.0%   1.4%   0.0%   0.2%] skips [ 26.2%   1.4%   0.0%   0.0%]
+Eval for #2  170/380 accuracy =  44.7% [ 36.8%   6.3%   1.3%   0.3%] skips [ 58.4%  27.6%   0.0%   0.0%]
+Eval for #3   67/306 accuracy =  21.9% [ 15.7%   3.9%   2.3%   0.0%] skips [ 67.0%  25.2%   0.0%   0.0%]
+Eval for #4   40/240 accuracy =  16.7% [ 10.4%   3.3%   2.9%   0.0%] skips [ 68.3%  30.4%   0.0%   0.0%]
+Eval global  687/1346 accuracy = 51.0%
+*** model train epoch 18 53.32 sec
+Epoch   20 Step   403282: lr = 0.0011 words/sec =    18647
+Eval for #1  409/420 accuracy =  97.4% [ 95.7%   1.4%   0.2%   0.0%] skips [ 27.4%   1.4%   0.0%   0.0%]
+Eval for #2  168/380 accuracy =  44.2% [ 37.1%   6.1%   0.8%   0.3%] skips [ 57.9%  27.9%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 15.0%   3.9%   2.0%   0.0%] skips [ 67.3%  25.2%   0.0%   0.0%]
+Eval for #4   41/240 accuracy =  17.1% [ 10.4%   5.0%   1.7%   0.0%] skips [ 66.7%  32.1%   0.0%   0.0%]
+Eval global  682/1346 accuracy = 50.7%
+*** model train epoch 19 53.16 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.004
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.004
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.61 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.7%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.3%  99.7%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.8%  99.2%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20166: lr = 0.0037 words/sec =     1519
+Eval for #1   57/420 accuracy =  13.6% [  6.4%   4.5%   1.9%   0.7%] skips [ 31.4%   0.0%   0.0%   0.0%]
+Eval for #2   90/380 accuracy =  23.7% [ 12.6%   6.3%   4.7%   0.0%] skips [ 53.9%   0.8%   0.0%   0.0%]
+Eval for #3   10/306 accuracy =   3.3% [  1.0%   1.3%   1.0%   0.0%] skips [ 43.8%   0.3%   0.0%   0.0%]
+Eval for #4    4/240 accuracy =   1.7% [  0.4%   0.8%   0.4%   0.0%] skips [ 23.3%   0.8%   0.0%   0.0%]
+Eval global  161/1346 accuracy = 12.0%
+*** model train epoch 0 47.04 sec
+Epoch    2 Step    40320: lr = 0.0034 words/sec =     6470
+Eval for #1  183/420 accuracy =  43.6% [ 24.8%  10.0%   6.4%   2.4%] skips [ 41.0%   0.0%   0.0%   0.0%]
+Eval for #2   88/380 accuracy =  23.2% [ 19.5%   1.6%   1.8%   0.3%] skips [ 50.3%   2.6%   0.0%   0.0%]
+Eval for #3   10/306 accuracy =   3.3% [  2.3%   0.0%   0.3%   0.7%] skips [ 42.2%   1.6%   0.0%   0.0%]
+Eval for #4   16/240 accuracy =   6.7% [  2.1%   2.9%   1.7%   0.0%] skips [ 52.5%   1.7%   0.0%   0.0%]
+Eval global  297/1346 accuracy = 22.1%
+*** model train epoch 1 44.81 sec
+Epoch    3 Step    60482: lr = 0.0031 words/sec =    37694
+Eval for #1  289/420 accuracy =  68.8% [ 51.4%   9.5%   5.2%   2.6%] skips [ 27.4%   0.0%   0.0%   0.0%]
+Eval for #2  113/380 accuracy =  29.7% [ 23.2%   3.4%   1.6%   1.6%] skips [ 51.3%   3.9%   0.0%   0.0%]
+Eval for #3   23/306 accuracy =   7.5% [  2.9%   2.6%   1.0%   1.0%] skips [ 43.1%   2.9%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  2.9%   2.9%   4.6%   0.4%] skips [ 60.4%   1.7%   0.0%   0.0%]
+Eval global  451/1346 accuracy = 33.5%
+*** model train epoch 2 44.86 sec
+Epoch    4 Step    80650: lr = 0.0028 words/sec =     3980
+Eval for #1  367/420 accuracy =  87.4% [ 70.5%   7.9%   6.0%   3.1%] skips [ 17.9%   0.0%   0.0%   0.0%]
+Eval for #2  136/380 accuracy =  35.8% [ 25.5%   5.0%   3.7%   1.6%] skips [ 51.3%   4.5%   0.0%   0.0%]
+Eval for #3   43/306 accuracy =  14.1% [  7.8%   3.3%   2.3%   0.7%] skips [ 44.8%   3.6%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  5.8%   5.4%   1.2%   0.0%] skips [ 68.3%   1.2%   0.0%   0.0%]
+Eval global  576/1346 accuracy = 42.8%
+*** model train epoch 3 45.81 sec
+Epoch    5 Step   100821: lr = 0.0024 words/sec =    36517
+Eval for #1  389/420 accuracy =  92.6% [ 78.1%   7.9%   5.0%   1.7%] skips [ 13.1%   0.2%   0.0%   0.0%]
+Eval for #2  153/380 accuracy =  40.3% [ 27.6%   6.3%   4.5%   1.8%] skips [ 53.4%   4.2%   0.0%   0.0%]
+Eval for #3   56/306 accuracy =  18.3% [  8.8%   3.9%   3.9%   1.6%] skips [ 48.0%   3.3%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [  9.6%   3.8%   2.1%   0.0%] skips [ 70.8%   1.2%   0.0%   0.0%]
+Eval global  635/1346 accuracy = 47.2%
+*** model train epoch 4 45.90 sec
+Epoch    6 Step   120983: lr = 0.0021 words/sec =    14582
+Eval for #1  400/420 accuracy =  95.2% [ 81.4%   7.9%   4.8%   1.2%] skips [ 10.5%   0.0%   0.0%   0.0%]
+Eval for #2  170/380 accuracy =  44.7% [ 31.6%   7.1%   4.2%   1.8%] skips [ 52.6%   5.3%   0.0%   0.0%]
+Eval for #3   60/306 accuracy =  19.6% [ 10.8%   3.6%   4.2%   1.0%] skips [ 51.3%   4.2%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 10.0%   3.8%   0.8%   0.4%] skips [ 73.8%   1.2%   0.0%   0.0%]
+Eval global  666/1346 accuracy = 49.5%
+*** model train epoch 5 44.83 sec
+Epoch    7 Step   141145: lr = 0.0018 words/sec =    39420
+Eval for #1  410/420 accuracy =  97.6% [ 84.0%   7.4%   5.2%   1.0%] skips [ 10.0%   0.0%   0.0%   0.0%]
+Eval for #2  169/380 accuracy =  44.5% [ 35.0%   5.3%   2.9%   1.3%] skips [ 53.9%   6.1%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 11.1%   6.2%   2.6%   1.6%] skips [ 55.2%   4.9%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 10.4%   2.9%   1.7%   0.0%] skips [ 75.4%   2.5%   0.0%   0.0%]
+Eval global  681/1346 accuracy = 50.6%
+*** model train epoch 6 43.97 sec
+Epoch    8 Step   161291: lr = 0.0015 words/sec =     3985
+Eval for #1  414/420 accuracy =  98.6% [ 87.4%   8.3%   2.1%   0.7%] skips [  9.5%   0.0%   0.0%   0.0%]
+Eval for #2  172/380 accuracy =  45.3% [ 35.0%   6.3%   3.2%   0.8%] skips [ 55.3%   6.6%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 11.1%   6.9%   3.6%   0.7%] skips [ 57.5%   5.6%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [ 11.2%   2.1%   2.1%   0.0%] skips [ 77.9%   2.9%   0.0%   0.0%]
+Eval global  691/1346 accuracy = 51.3%
+*** model train epoch 7 44.82 sec
+Epoch    9 Step   181446: lr = 0.0012 words/sec =    19956
+Eval for #1  413/420 accuracy =  98.3% [ 88.3%   6.7%   2.9%   0.5%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  174/380 accuracy =  45.8% [ 37.1%   5.0%   3.4%   0.3%] skips [ 56.3%   6.3%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 11.4%   6.9%   2.6%   1.3%] skips [ 58.5%   6.2%   0.0%   0.0%]
+Eval for #4   41/240 accuracy =  17.1% [ 11.2%   2.5%   3.3%   0.0%] skips [ 80.0%   4.2%   0.0%   0.0%]
+Eval global  696/1346 accuracy = 51.7%
+*** model train epoch 8 44.77 sec
+Epoch   10 Step   201606: lr = 0.0009 words/sec =     9969
+Eval for #1  416/420 accuracy =  99.0% [ 89.5%   6.4%   2.1%   1.0%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  175/380 accuracy =  46.1% [ 36.6%   6.3%   2.9%   0.3%] skips [ 56.6%   6.3%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 12.1%   6.2%   3.6%   0.3%] skips [ 61.8%   6.2%   0.0%   0.0%]
+Eval for #4   42/240 accuracy =  17.5% [ 10.4%   3.8%   3.3%   0.0%] skips [ 81.2%   4.6%   0.0%   0.0%]
+Eval global  701/1346 accuracy = 52.1%
+*** model train epoch 9 44.80 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.003
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.003
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.61 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.7%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20153: lr = 0.0028 words/sec =    33484
+Eval for #1   31/420 accuracy =   7.4% [  4.0%   1.4%   1.0%   1.0%] skips [ 23.6%   0.7%   0.0%   0.0%]
+Eval for #2   68/380 accuracy =  17.9% [ 10.3%   5.3%   2.4%   0.0%] skips [ 43.7%   0.3%   0.0%   0.0%]
+Eval for #3    3/306 accuracy =   1.0% [  0.3%   0.3%   0.3%   0.0%] skips [ 32.0%   0.0%   0.0%   0.0%]
+Eval for #4    4/240 accuracy =   1.7% [  0.4%   0.8%   0.4%   0.0%] skips [ 19.6%   0.0%   0.0%   0.0%]
+Eval global  106/1346 accuracy =  7.9%
+*** model train epoch 0 44.90 sec
+Epoch    2 Step    40319: lr = 0.0025 words/sec =    28487
+Eval for #1   92/420 accuracy =  21.9% [  8.3%   6.2%   5.2%   2.1%] skips [ 46.9%   0.2%   0.0%   0.0%]
+Eval for #2   87/380 accuracy =  22.9% [ 15.5%   3.7%   3.2%   0.5%] skips [ 55.8%   1.3%   0.0%   0.0%]
+Eval for #3   11/306 accuracy =   3.6% [  1.6%   1.0%   0.0%   1.0%] skips [ 45.8%   0.7%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  1.7%   0.8%   1.2%   0.0%] skips [ 39.2%   2.5%   0.0%   0.0%]
+Eval global  199/1346 accuracy = 14.8%
+*** model train epoch 1 43.66 sec
+Epoch    3 Step    60508: lr = 0.0023 words/sec =    29094
+Eval for #1  205/420 accuracy =  48.8% [ 29.8%  12.6%   4.8%   1.7%] skips [ 36.9%   0.0%   0.0%   0.0%]
+Eval for #2   85/380 accuracy =  22.4% [ 19.2%   1.8%   0.8%   0.5%] skips [ 51.6%   3.2%   0.0%   0.0%]
+Eval for #3   12/306 accuracy =   3.9% [  1.3%   1.6%   1.0%   0.0%] skips [ 45.4%   1.3%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  2.9%   1.7%   1.2%   0.4%] skips [ 52.9%   1.2%   0.0%   0.0%]
+Eval global  317/1346 accuracy = 23.6%
+*** model train epoch 2 43.87 sec
+Epoch    4 Step    80682: lr = 0.0021 words/sec =    25972
+Eval for #1  288/420 accuracy =  68.6% [ 49.5%   9.5%   6.0%   3.6%] skips [ 25.7%   0.0%   0.0%   0.0%]
+Eval for #2  101/380 accuracy =  26.6% [ 22.4%   1.1%   2.4%   0.8%] skips [ 50.0%   4.5%   0.0%   0.0%]
+Eval for #3   20/306 accuracy =   6.5% [  2.6%   2.0%   1.6%   0.3%] skips [ 44.8%   2.3%   0.0%   0.0%]
+Eval for #4   21/240 accuracy =   8.8% [  2.5%   2.9%   3.3%   0.0%] skips [ 62.1%   0.8%   0.0%   0.0%]
+Eval global  430/1346 accuracy = 31.9%
+*** model train epoch 3 43.76 sec
+Epoch    5 Step   100853: lr = 0.0018 words/sec =    34515
+Eval for #1  338/420 accuracy =  80.5% [ 63.8%   7.4%   6.4%   2.9%] skips [ 19.0%   0.0%   0.0%   0.0%]
+Eval for #2  122/380 accuracy =  32.1% [ 24.5%   3.9%   1.8%   1.8%] skips [ 51.1%   5.3%   0.0%   0.0%]
+Eval for #3   38/306 accuracy =  12.4% [  5.9%   3.6%   2.3%   0.7%] skips [ 44.1%   2.0%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  5.4%   5.4%   2.5%   0.0%] skips [ 66.2%   1.2%   0.0%   0.0%]
+Eval global  530/1346 accuracy = 39.4%
+*** model train epoch 4 43.65 sec
+Epoch    6 Step   121010: lr = 0.0016 words/sec =    39900
+Eval for #1  370/420 accuracy =  88.1% [ 71.4%   8.6%   5.2%   2.9%] skips [ 13.3%   0.0%   0.0%   0.0%]
+Eval for #2  141/380 accuracy =  37.1% [ 26.8%   3.9%   3.9%   2.4%] skips [ 52.6%   4.5%   0.0%   0.0%]
+Eval for #3   47/306 accuracy =  15.4% [  8.8%   3.3%   2.3%   1.0%] skips [ 43.5%   2.6%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  6.7%   5.4%   0.8%   0.0%] skips [ 68.8%   1.2%   0.0%   0.0%]
+Eval global  589/1346 accuracy = 43.8%
+*** model train epoch 5 43.58 sec
+Epoch    7 Step   141189: lr = 0.0014 words/sec =    18604
+Eval for #1  388/420 accuracy =  92.4% [ 78.1%   7.6%   5.0%   1.7%] skips [ 10.7%   0.0%   0.0%   0.0%]
+Eval for #2  149/380 accuracy =  39.2% [ 28.2%   7.4%   2.4%   1.3%] skips [ 53.4%   4.2%   0.0%   0.0%]
+Eval for #3   54/306 accuracy =  17.6% [  9.5%   4.2%   2.3%   1.6%] skips [ 48.0%   2.3%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  6.7%   5.0%   0.4%   0.0%] skips [ 69.6%   1.2%   0.0%   0.0%]
+Eval global  620/1346 accuracy = 46.1%
+*** model train epoch 6 43.94 sec
+Epoch    8 Step   161343: lr = 0.0011 words/sec =    25042
+Eval for #1  397/420 accuracy =  94.5% [ 81.7%   6.7%   5.2%   1.0%] skips [ 10.2%   0.0%   0.0%   0.0%]
+Eval for #2  157/380 accuracy =  41.3% [ 28.7%   7.9%   3.4%   1.3%] skips [ 55.0%   4.5%   0.0%   0.0%]
+Eval for #3   58/306 accuracy =  19.0% [ 10.5%   4.2%   2.3%   2.0%] skips [ 48.4%   2.9%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  7.5%   4.6%   0.0%   0.4%] skips [ 71.7%   1.7%   0.0%   0.0%]
+Eval global  642/1346 accuracy = 47.7%
+*** model train epoch 7 43.71 sec
+Epoch    9 Step   181526: lr = 0.0009 words/sec =    28395
+Eval for #1  402/420 accuracy =  95.7% [ 82.1%   7.6%   4.5%   1.4%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  166/380 accuracy =  43.7% [ 30.8%   7.4%   4.5%   1.1%] skips [ 55.8%   4.2%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 10.1%   5.2%   3.6%   2.3%] skips [ 50.3%   3.3%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  8.8%   2.9%   1.2%   0.0%] skips [ 72.1%   2.1%   0.0%   0.0%]
+Eval global  664/1346 accuracy = 49.3%
+*** model train epoch 8 43.90 sec
+Epoch   10 Step   201707: lr = 0.0007 words/sec =    25885
+Eval for #1  406/420 accuracy =  96.7% [ 83.6%   6.2%   5.5%   1.4%] skips [  9.0%   0.0%   0.0%   0.0%]
+Eval for #2  170/380 accuracy =  44.7% [ 31.8%   8.2%   4.5%   0.3%] skips [ 55.0%   4.7%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 10.5%   5.2%   3.3%   2.3%] skips [ 53.6%   3.3%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  9.2%   2.9%   0.8%   0.0%] skips [ 73.3%   2.1%   0.0%   0.0%]
+Eval global  672/1346 accuracy = 49.9%
+*** model train epoch 9 43.75 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 200 --learning_rate 0.003 
+====================
+embedding_size:   200
+epochs_to_train:  10
+learning_rate:    0.003
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.64 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20127: lr = 0.0028 words/sec =     7944
+Eval for #1   28/420 accuracy =   6.7% [  3.1%   1.7%   1.4%   0.5%] skips [ 20.5%   0.0%   0.0%   0.0%]
+Eval for #2   56/380 accuracy =  14.7% [  8.9%   2.9%   2.6%   0.3%] skips [ 38.7%   0.0%   0.0%   0.0%]
+Eval for #3    1/306 accuracy =   0.3% [  0.0%   0.3%   0.0%   0.0%] skips [ 23.9%   0.3%   0.0%   0.0%]
+Eval for #4    4/240 accuracy =   1.7% [  0.4%   0.8%   0.0%   0.4%] skips [ 16.2%   0.0%   0.0%   0.0%]
+Eval global   89/1346 accuracy =  6.6%
+*** model train epoch 0 81.54 sec
+Epoch    2 Step    40256: lr = 0.0025 words/sec =    14934
+Eval for #1   82/420 accuracy =  19.5% [  5.7%   9.5%   2.9%   1.4%] skips [ 47.1%   0.0%   0.0%   0.0%]
+Eval for #2   89/380 accuracy =  23.4% [ 15.8%   3.9%   2.9%   0.8%] skips [ 56.8%   1.6%   0.0%   0.0%]
+Eval for #3    9/306 accuracy =   2.9% [  2.0%   0.3%   0.0%   0.7%] skips [ 43.8%   0.3%   0.0%   0.0%]
+Eval for #4    7/240 accuracy =   2.9% [  1.7%   0.8%   0.4%   0.0%] skips [ 40.0%   1.2%   0.0%   0.0%]
+Eval global  187/1346 accuracy = 13.9%
+*** model train epoch 1 84.37 sec
+Epoch    3 Step    60411: lr = 0.0023 words/sec =    11607
+Eval for #1  185/420 accuracy =  44.0% [ 26.9%   9.0%   5.5%   2.6%] skips [ 39.0%   0.0%   0.0%   0.0%]
+Eval for #2   89/380 accuracy =  23.4% [ 18.4%   2.9%   1.3%   0.8%] skips [ 51.6%   2.9%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  2.0%   1.0%   1.0%   0.3%] skips [ 40.8%   1.3%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  2.1%   1.7%   1.2%   0.4%] skips [ 52.5%   1.7%   0.0%   0.0%]
+Eval global  300/1346 accuracy = 22.3%
+*** model train epoch 2 75.87 sec
+Epoch    4 Step    80560: lr = 0.0021 words/sec =    18484
+Eval for #1  273/420 accuracy =  65.0% [ 46.4%  10.5%   5.7%   2.4%] skips [ 26.4%   0.0%   0.0%   0.0%]
+Eval for #2  102/380 accuracy =  26.8% [ 21.8%   2.9%   1.1%   1.1%] skips [ 51.3%   4.2%   0.0%   0.0%]
+Eval for #3   18/306 accuracy =   5.9% [  2.3%   1.3%   2.0%   0.3%] skips [ 44.8%   2.6%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  2.5%   2.5%   2.5%   0.4%] skips [ 59.6%   1.2%   0.0%   0.0%]
+Eval global  412/1346 accuracy = 30.6%
+*** model train epoch 3 77.37 sec
+Epoch    5 Step   100711: lr = 0.0018 words/sec =    14500
+Eval for #1  323/420 accuracy =  76.9% [ 59.5%   9.0%   6.7%   1.7%] skips [ 19.5%   0.0%   0.0%   0.0%]
+Eval for #2  121/380 accuracy =  31.8% [ 24.5%   3.9%   2.4%   1.1%] skips [ 51.3%   4.5%   0.0%   0.0%]
+Eval for #3   38/306 accuracy =  12.4% [  5.6%   2.6%   3.9%   0.3%] skips [ 43.8%   2.0%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  4.6%   4.2%   2.9%   0.4%] skips [ 65.4%   1.2%   0.0%   0.0%]
+Eval global  511/1346 accuracy = 38.0%
+*** model train epoch 4 81.96 sec
+Epoch    6 Step   120856: lr = 0.0016 words/sec =     4030
+Eval for #1  359/420 accuracy =  85.5% [ 68.8%   9.3%   5.5%   1.9%] skips [ 14.3%   0.0%   0.0%   0.0%]
+Eval for #2  138/380 accuracy =  36.3% [ 26.3%   4.7%   3.7%   1.6%] skips [ 51.6%   4.7%   0.0%   0.0%]
+Eval for #3   46/306 accuracy =  15.0% [  8.8%   3.6%   1.3%   1.3%] skips [ 45.8%   2.0%   0.0%   0.0%]
+Eval for #4   33/240 accuracy =  13.8% [  7.1%   3.8%   2.9%   0.0%] skips [ 68.8%   1.2%   0.0%   0.0%]
+Eval global  576/1346 accuracy = 42.8%
+*** model train epoch 5 75.20 sec
+Epoch    7 Step   141006: lr = 0.0014 words/sec =    24352
+Eval for #1  382/420 accuracy =  91.0% [ 75.2%   8.8%   6.2%   0.7%] skips [ 11.4%   0.0%   0.0%   0.0%]
+Eval for #2  149/380 accuracy =  39.2% [ 27.9%   5.5%   4.5%   1.3%] skips [ 54.2%   4.7%   0.0%   0.0%]
+Eval for #3   53/306 accuracy =  17.3% [ 10.5%   3.3%   2.0%   1.6%] skips [ 46.4%   2.3%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  7.9%   2.9%   2.5%   0.0%] skips [ 69.2%   1.2%   0.0%   0.0%]
+Eval global  616/1346 accuracy = 45.8%
+*** model train epoch 6 71.68 sec
+Epoch    8 Step   161149: lr = 0.0011 words/sec =     8020
+Eval for #1  392/420 accuracy =  93.3% [ 80.5%   7.6%   4.5%   0.7%] skips [ 10.7%   0.0%   0.0%   0.0%]
+Eval for #2  156/380 accuracy =  41.1% [ 27.6%   7.1%   4.5%   1.8%] skips [ 54.7%   5.0%   0.0%   0.0%]
+Eval for #3   59/306 accuracy =  19.3% [  9.8%   3.9%   3.9%   1.6%] skips [ 46.1%   3.9%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  7.9%   2.9%   2.5%   0.0%] skips [ 69.6%   1.2%   0.0%   0.0%]
+Eval global  639/1346 accuracy = 47.5%
+*** model train epoch 7 71.63 sec
+Epoch    9 Step   181305: lr = 0.0009 words/sec =     8939
+Eval for #1  399/420 accuracy =  95.0% [ 81.9%   6.0%   6.2%   1.0%] skips [  9.5%   0.0%   0.0%   0.0%]
+Eval for #2  164/380 accuracy =  43.2% [ 31.1%   6.1%   4.2%   1.8%] skips [ 55.0%   5.0%   0.0%   0.0%]
+Eval for #3   58/306 accuracy =  19.0% [  9.5%   5.2%   3.3%   1.0%] skips [ 49.0%   3.9%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  8.3%   2.5%   1.7%   0.4%] skips [ 70.8%   1.7%   0.0%   0.0%]
+Eval global  652/1346 accuracy = 48.4%
+*** model train epoch 8 71.94 sec
+Epoch   10 Step   201465: lr = 0.0007 words/sec =     6975
+Eval for #1  400/420 accuracy =  95.2% [ 84.0%   5.7%   5.0%   0.5%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  166/380 accuracy =  43.7% [ 30.5%   8.9%   2.9%   1.3%] skips [ 56.1%   4.7%   0.0%   0.0%]
+Eval for #3   63/306 accuracy =  20.6% [ 10.8%   4.6%   3.6%   1.6%] skips [ 52.6%   4.2%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  8.8%   2.9%   1.2%   0.4%] skips [ 72.5%   1.7%   0.0%   0.0%]
+Eval global  661/1346 accuracy = 49.1%
+*** model train epoch 9 72.31 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 200 --learning_rate 0.002
+====================
+embedding_size:   200
+epochs_to_train:  10
+learning_rate:    0.002
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.67 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20142: lr = 0.0018 words/sec =    13938
+Eval for #1   10/420 accuracy =   2.4% [  0.2%   0.7%   0.7%   0.7%] skips [ 12.4%   0.0%   0.0%   0.0%]
+Eval for #2   29/380 accuracy =   7.6% [  2.9%   1.8%   2.9%   0.0%] skips [ 37.1%   0.3%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [ 16.7%   0.0%   0.0%   0.0%]
+Eval for #4    2/240 accuracy =   0.8% [  0.0%   0.8%   0.0%   0.0%] skips [  5.4%   0.0%   0.0%   0.0%]
+Eval global   41/1346 accuracy =  3.0%
+*** model train epoch 0 73.69 sec
+Epoch    2 Step    40289: lr = 0.0017 words/sec =     9947
+Eval for #1   45/420 accuracy =  10.7% [  3.3%   5.0%   2.1%   0.2%] skips [ 30.0%   0.2%   0.0%   0.0%]
+Eval for #2   99/380 accuracy =  26.1% [ 11.3%  10.8%   3.7%   0.3%] skips [ 50.0%   1.1%   0.0%   0.0%]
+Eval for #3    8/306 accuracy =   2.6% [  1.0%   0.3%   1.3%   0.0%] skips [ 34.3%   0.3%   0.0%   0.0%]
+Eval for #4    5/240 accuracy =   2.1% [  0.8%   1.2%   0.0%   0.0%] skips [ 25.4%   0.4%   0.0%   0.0%]
+Eval global  157/1346 accuracy = 11.7%
+*** model train epoch 1 72.21 sec
+Epoch    3 Step    60454: lr = 0.0015 words/sec =    17568
+Eval for #1   66/420 accuracy =  15.7% [  5.2%   5.0%   4.0%   1.4%] skips [ 47.4%   0.0%   0.0%   0.0%]
+Eval for #2   85/380 accuracy =  22.4% [ 12.4%   5.3%   3.9%   0.8%] skips [ 55.5%   1.1%   0.0%   0.0%]
+Eval for #3   10/306 accuracy =   3.3% [  2.3%   0.7%   0.0%   0.3%] skips [ 40.8%   0.3%   0.0%   0.0%]
+Eval for #4    7/240 accuracy =   2.9% [  1.2%   0.8%   0.8%   0.0%] skips [ 37.9%   1.2%   0.0%   0.0%]
+Eval global  168/1346 accuracy = 12.5%
+*** model train epoch 2 72.57 sec
+Epoch    4 Step    80607: lr = 0.0014 words/sec =    22510
+Eval for #1  149/420 accuracy =  35.5% [ 16.9%   9.5%   7.1%   1.9%] skips [ 42.9%   0.5%   0.0%   0.0%]
+Eval for #2   88/380 accuracy =  23.2% [ 17.1%   4.2%   1.3%   0.5%] skips [ 53.4%   2.1%   0.0%   0.0%]
+Eval for #3   10/306 accuracy =   3.3% [  1.6%   1.0%   0.3%   0.3%] skips [ 37.6%   1.0%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  3.3%   0.8%   0.8%   0.4%] skips [ 50.0%   0.8%   0.0%   0.0%]
+Eval global  260/1346 accuracy = 19.3%
+*** model train epoch 3 71.55 sec
+Epoch    5 Step   100768: lr = 0.0012 words/sec =     1520
+Eval for #1  210/420 accuracy =  50.0% [ 30.5%  10.7%   5.5%   3.3%] skips [ 33.8%   0.0%   0.0%   0.0%]
+Eval for #2   84/380 accuracy =  22.1% [ 18.9%   2.6%   0.3%   0.3%] skips [ 52.1%   2.1%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  1.6%   1.3%   1.0%   0.3%] skips [ 38.6%   1.0%   0.0%   0.0%]
+Eval for #4   14/240 accuracy =   5.8% [  3.3%   0.8%   1.7%   0.0%] skips [ 54.2%   2.1%   0.0%   0.0%]
+Eval global  321/1346 accuracy = 23.8%
+*** model train epoch 4 74.02 sec
+Epoch    6 Step   120909: lr = 0.0011 words/sec =    18567
+Eval for #1  242/420 accuracy =  57.6% [ 41.2%   7.6%   6.7%   2.1%] skips [ 27.9%   0.0%   0.0%   0.0%]
+Eval for #2   92/380 accuracy =  24.2% [ 18.2%   2.9%   1.3%   1.8%] skips [ 51.8%   3.2%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  1.6%   2.0%   0.7%   0.0%] skips [ 37.3%   2.0%   0.0%   0.0%]
+Eval for #4   17/240 accuracy =   7.1% [  2.1%   1.7%   2.9%   0.4%] skips [ 57.1%   1.2%   0.0%   0.0%]
+Eval global  364/1346 accuracy = 27.0%
+*** model train epoch 5 71.90 sec
+Epoch    7 Step   141061: lr = 0.0009 words/sec =    23158
+Eval for #1  282/420 accuracy =  67.1% [ 49.0%   9.0%   6.7%   2.4%] skips [ 22.9%   0.0%   0.0%   0.0%]
+Eval for #2  104/380 accuracy =  27.4% [ 19.2%   4.2%   2.6%   1.3%] skips [ 52.1%   3.4%   0.0%   0.0%]
+Eval for #3   21/306 accuracy =   6.9% [  2.0%   2.3%   2.3%   0.3%] skips [ 39.2%   2.0%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  2.1%   2.5%   3.3%   0.0%] skips [ 60.4%   1.2%   0.0%   0.0%]
+Eval global  426/1346 accuracy = 31.6%
+*** model train epoch 6 71.98 sec
+Epoch    8 Step   161180: lr = 0.0008 words/sec =    23040
+Eval for #1  313/420 accuracy =  74.5% [ 56.2%   9.3%   5.2%   3.8%] skips [ 19.8%   0.0%   0.0%   0.0%]
+Eval for #2  111/380 accuracy =  29.2% [ 21.6%   5.0%   1.8%   0.8%] skips [ 51.3%   3.4%   0.0%   0.0%]
+Eval for #3   30/306 accuracy =   9.8% [  3.6%   2.9%   1.6%   1.6%] skips [ 39.5%   2.0%   0.0%   0.0%]
+Eval for #4   23/240 accuracy =   9.6% [  2.5%   3.8%   2.9%   0.4%] skips [ 63.3%   1.2%   0.0%   0.0%]
+Eval global  477/1346 accuracy = 35.4%
+*** model train epoch 7 71.88 sec
+Epoch    9 Step   181346: lr = 0.0006 words/sec =    19971
+Eval for #1  332/420 accuracy =  79.0% [ 60.7%   9.8%   6.0%   2.6%] skips [ 17.9%   0.0%   0.0%   0.0%]
+Eval for #2  120/380 accuracy =  31.6% [ 23.4%   4.7%   2.6%   0.8%] skips [ 51.1%   3.4%   0.0%   0.0%]
+Eval for #3   37/306 accuracy =  12.1% [  5.6%   3.9%   2.0%   0.7%] skips [ 40.5%   2.0%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  3.3%   3.8%   2.9%   0.4%] skips [ 64.2%   1.2%   0.0%   0.0%]
+Eval global  514/1346 accuracy = 38.2%
+*** model train epoch 8 72.89 sec
+Epoch   10 Step   201506: lr = 0.0004 words/sec =     8459
+Eval for #1  345/420 accuracy =  82.1% [ 63.6%   8.6%   6.9%   3.1%] skips [ 13.8%   0.0%   0.0%   0.0%]
+Eval for #2  122/380 accuracy =  32.1% [ 24.5%   5.0%   1.8%   0.8%] skips [ 51.3%   3.4%   0.0%   0.0%]
+Eval for #3   40/306 accuracy =  13.1% [  7.5%   3.3%   1.6%   0.7%] skips [ 41.2%   2.0%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  3.8%   3.3%   3.8%   0.0%] skips [ 66.2%   1.2%   0.0%   0.0%]
+Eval global  533/1346 accuracy = 39.6%
+*** model train epoch 9 72.66 sec
+dikama@dikama-HP-Notebook:~/git_root/tol_stoy$ python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 200 --learning_rate 0.004
+====================
+embedding_size:   200
+epochs_to_train:  10
+learning_rate:    0.004
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+I word2vec_kernels.cc:200] Data file: input/text-words.txt contains 24140862 bytes, 2168725 words, 134375 unique words, 33468 unique frequent words.
+Data file:  input/text-words.txt
+Vocab size:  33468  + UNK
+Words per epoch:  2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+*** model created 1.71 sec
+
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.5%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Epoch    1 Step    20136: lr = 0.0037 words/sec =    24426
+Eval for #1   44/420 accuracy =  10.5% [  3.3%   3.8%   2.4%   1.0%] skips [ 29.3%   0.0%   0.0%   0.0%]
+Eval for #2   74/380 accuracy =  19.5% [ 12.6%   2.4%   4.2%   0.3%] skips [ 50.5%   1.1%   0.0%   0.0%]
+Eval for #3    9/306 accuracy =   2.9% [  0.3%   1.0%   1.3%   0.3%] skips [ 40.2%   0.3%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.0%   0.0%   0.4%   0.0%] skips [ 22.1%   0.4%   0.0%   0.0%]
+Eval global  128/1346 accuracy =  9.5%
+*** model train epoch 0 72.75 sec
+Epoch    2 Step    40286: lr = 0.0034 words/sec =     5465
+Eval for #1  168/420 accuracy =  40.0% [ 23.8%  10.2%   3.3%   2.6%] skips [ 42.1%   0.0%   0.0%   0.0%]
+Eval for #2   86/380 accuracy =  22.6% [ 18.4%   1.6%   2.4%   0.3%] skips [ 49.7%   1.8%   0.0%   0.0%]
+Eval for #3   11/306 accuracy =   3.6% [  1.6%   1.0%   0.7%   0.3%] skips [ 42.5%   1.3%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  1.7%   2.5%   1.2%   0.0%] skips [ 50.8%   1.7%   0.0%   0.0%]
+Eval global  278/1346 accuracy = 20.7%
+*** model train epoch 1 71.66 sec
+Epoch    3 Step    60440: lr = 0.0031 words/sec =     9594
+Eval for #1  292/420 accuracy =  69.5% [ 51.9%   6.7%   7.9%   3.1%] skips [ 28.3%   0.0%   0.0%   0.0%]
+Eval for #2  107/380 accuracy =  28.2% [ 21.8%   2.9%   2.1%   1.3%] skips [ 49.7%   4.5%   0.0%   0.0%]
+Eval for #3   19/306 accuracy =   6.2% [  2.3%   2.0%   1.6%   0.3%] skips [ 42.8%   2.3%   0.0%   0.0%]
+Eval for #4   18/240 accuracy =   7.5% [  2.1%   3.3%   2.1%   0.0%] skips [ 58.8%   1.7%   0.0%   0.0%]
+Eval global  436/1346 accuracy = 32.4%
+*** model train epoch 2 71.83 sec
+Epoch    4 Step    80584: lr = 0.0028 words/sec =     3494
+Eval for #1  365/420 accuracy =  86.9% [ 70.2%   6.7%   7.4%   2.6%] skips [ 16.9%   0.0%   0.0%   0.0%]
+Eval for #2  129/380 accuracy =  33.9% [ 26.3%   4.7%   0.8%   2.1%] skips [ 52.4%   4.2%   0.0%   0.0%]
+Eval for #3   39/306 accuracy =  12.7% [  6.5%   3.9%   1.6%   0.7%] skips [ 45.4%   2.9%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  6.2%   3.8%   1.7%   0.4%] skips [ 67.1%   1.7%   0.0%   0.0%]
+Eval global  562/1346 accuracy = 41.8%
+*** model train epoch 3 71.60 sec
+Epoch    5 Step   100750: lr = 0.0024 words/sec =    12529
+Eval for #1  388/420 accuracy =  92.4% [ 76.9%   9.8%   3.8%   1.9%] skips [ 11.7%   0.0%   0.0%   0.0%]
+Eval for #2  147/380 accuracy =  38.7% [ 27.4%   6.1%   4.5%   0.8%] skips [ 53.7%   5.8%   0.0%   0.0%]
+Eval for #3   51/306 accuracy =  16.7% [  9.2%   4.6%   2.3%   0.7%] skips [ 47.7%   2.6%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [  9.2%   2.1%   2.9%   0.0%] skips [ 70.0%   1.7%   0.0%   0.0%]
+Eval global  620/1346 accuracy = 46.1%
+*** model train epoch 4 71.29 sec
+Epoch    6 Step   120895: lr = 0.0021 words/sec =     1987
+Eval for #1  398/420 accuracy =  94.8% [ 82.6%   6.7%   5.2%   0.2%] skips [  9.5%   0.0%   0.0%   0.0%]
+Eval for #2  159/380 accuracy =  41.8% [ 31.6%   4.7%   4.5%   1.1%] skips [ 53.7%   6.1%   0.0%   0.0%]
+Eval for #3   58/306 accuracy =  19.0% [ 10.8%   3.9%   3.6%   0.7%] skips [ 50.7%   4.6%   0.0%   0.0%]
+Eval for #4   35/240 accuracy =  14.6% [ 11.2%   1.7%   1.2%   0.4%] skips [ 74.2%   1.7%   0.0%   0.0%]
+Eval global  650/1346 accuracy = 48.3%
+*** model train epoch 5 71.84 sec
+Epoch    7 Step   141054: lr = 0.0018 words/sec =     2498
+Eval for #1  409/420 accuracy =  97.4% [ 85.7%   6.9%   4.3%   0.5%] skips [  8.6%   0.0%   0.0%   0.0%]
+Eval for #2  169/380 accuracy =  44.5% [ 33.4%   5.3%   3.9%   1.8%] skips [ 53.2%   7.4%   0.0%   0.0%]
+Eval for #3   63/306 accuracy =  20.6% [ 11.4%   4.9%   3.3%   1.0%] skips [ 55.6%   4.9%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [ 10.8%   2.5%   0.8%   0.0%] skips [ 76.2%   2.5%   0.0%   0.0%]
+Eval global  675/1346 accuracy = 50.1%
+*** model train epoch 6 71.53 sec
+Epoch    8 Step   161193: lr = 0.0015 words/sec =    22556
+Eval for #1  413/420 accuracy =  98.3% [ 89.0%   6.4%   2.6%   0.2%] skips [  8.3%   0.0%   0.0%   0.0%]
+Eval for #2  168/380 accuracy =  44.2% [ 32.9%   7.6%   2.9%   0.8%] skips [ 55.3%   7.9%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 12.1%   5.2%   2.6%   1.0%] skips [ 59.5%   6.2%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [ 10.8%   2.1%   2.1%   0.0%] skips [ 76.7%   3.3%   0.0%   0.0%]
+Eval global  681/1346 accuracy = 50.6%
+*** model train epoch 7 71.00 sec
+Epoch    9 Step   181354: lr = 0.0012 words/sec =     3022
+Eval for #1  414/420 accuracy =  98.6% [ 90.2%   5.5%   2.4%   0.5%] skips [  8.3%   0.0%   0.0%   0.0%]
+Eval for #2  171/380 accuracy =  45.0% [ 33.7%   7.1%   3.2%   1.1%] skips [ 56.6%   7.4%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 13.1%   4.9%   2.3%   0.7%] skips [ 59.5%   6.9%   0.0%   0.0%]
+Eval for #4   39/240 accuracy =  16.2% [ 10.8%   2.9%   2.5%   0.0%] skips [ 79.2%   4.2%   0.0%   0.0%]
+Eval global  688/1346 accuracy = 51.1%
+*** model train epoch 8 71.57 sec
+Epoch   10 Step   201512: lr = 0.0009 words/sec =    16409
+Eval for #1  416/420 accuracy =  99.0% [ 91.2%   5.2%   2.1%   0.5%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  173/380 accuracy =  45.5% [ 33.9%   6.3%   4.5%   0.8%] skips [ 57.1%   7.4%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 11.8%   5.9%   3.3%   0.7%] skips [ 61.8%   6.9%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [  9.6%   3.8%   2.1%   0.0%] skips [ 81.7%   4.6%   0.0%   0.0%]
+Eval global  692/1346 accuracy = 51.4%
+*** model train epoch 9 72.17 sec
