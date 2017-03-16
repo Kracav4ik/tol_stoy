@@ -1,0 +1,1105 @@
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 6 --num_neg_samples 10 
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  10
+batch_size:       500
+window_size:      6
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.7%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   68/420 accuracy =  16.2% [  7.6%   3.3%   3.6%   1.7%] skips [ 33.1%   0.2%   0.0%   0.0%]
+Eval for #2   66/380 accuracy =  17.4% [  8.2%   6.6%   2.1%   0.5%] skips [ 50.3%   1.1%   0.0%   0.0%]
+Eval for #3    4/306 accuracy =   1.3% [  0.3%   1.0%   0.0%   0.0%] skips [ 39.9%   0.7%   0.0%   0.0%]
+Eval for #4    2/240 accuracy =   0.8% [  0.0%   0.8%   0.0%   0.0%] skips [ 33.3%   0.0%   0.0%   0.0%]
+Eval global  140/1346 accuracy = 10.4%
+Eval for #1  197/420 accuracy =  46.9% [ 29.5%   9.0%   5.7%   2.6%] skips [ 33.3%   0.0%   0.0%   0.0%]
+Eval for #2  103/380 accuracy =  27.1% [ 20.3%   2.6%   0.8%   3.4%] skips [ 46.6%   1.6%   0.0%   0.0%]
+Eval for #3   18/306 accuracy =   5.9% [  1.6%   2.6%   1.0%   0.7%] skips [ 40.8%   2.6%   0.0%   0.0%]
+Eval for #4   14/240 accuracy =   5.8% [  2.9%   2.1%   0.8%   0.0%] skips [ 53.3%   1.2%   0.0%   0.0%]
+Eval global  332/1346 accuracy = 24.7%
+Eval for #1  303/420 accuracy =  72.1% [ 57.1%   7.1%   4.8%   3.1%] skips [ 21.0%   0.0%   0.0%   0.0%]
+Eval for #2  127/380 accuracy =  33.4% [ 23.9%   4.2%   2.9%   2.4%] skips [ 47.6%   3.9%   0.0%   0.0%]
+Eval for #3   40/306 accuracy =  13.1% [  4.9%   5.2%   2.0%   1.0%] skips [ 39.2%   2.6%   0.0%   0.0%]
+Eval for #4   24/240 accuracy =  10.0% [  7.5%   1.7%   0.8%   0.0%] skips [ 64.2%   1.2%   0.0%   0.0%]
+Eval global  494/1346 accuracy = 36.7%
+Eval for #1  373/420 accuracy =  88.8% [ 72.6%   8.3%   6.0%   1.9%] skips [ 15.0%   0.0%   0.0%   0.0%]
+Eval for #2  153/380 accuracy =  40.3% [ 30.8%   3.9%   3.2%   2.4%] skips [ 51.8%   4.2%   0.0%   0.0%]
+Eval for #3   51/306 accuracy =  16.7% [  8.5%   5.2%   2.3%   0.7%] skips [ 46.1%   3.3%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  7.5%   2.5%   3.3%   0.0%] skips [ 68.8%   1.2%   0.0%   0.0%]
+Eval global  609/1346 accuracy = 45.2%
+Eval for #1  391/420 accuracy =  93.1% [ 77.4%   9.8%   4.5%   1.4%] skips [ 10.7%   0.0%   0.0%   0.0%]
+Eval for #2  170/380 accuracy =  44.7% [ 32.9%   6.6%   3.9%   1.3%] skips [ 50.3%   4.5%   0.0%   0.0%]
+Eval for #3   62/306 accuracy =  20.3% [ 11.1%   5.2%   3.6%   0.3%] skips [ 50.3%   4.6%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  7.1%   3.3%   2.5%   0.4%] skips [ 72.5%   1.2%   0.0%   0.0%]
+Eval global  655/1346 accuracy = 48.7%
+Eval for #1  407/420 accuracy =  96.9% [ 85.0%   6.9%   3.8%   1.2%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  178/380 accuracy =  46.8% [ 35.8%   5.5%   3.9%   1.6%] skips [ 51.6%   3.9%   0.0%   0.0%]
+Eval for #3   67/306 accuracy =  21.9% [ 12.1%   5.2%   3.6%   1.0%] skips [ 55.2%   4.9%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [  8.8%   3.8%   1.2%   0.4%] skips [ 76.7%   2.1%   0.0%   0.0%]
+Eval global  686/1346 accuracy = 51.0%
+Eval for #1  416/420 accuracy =  99.0% [ 89.3%   6.0%   2.6%   1.2%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  181/380 accuracy =  47.6% [ 35.8%   6.1%   3.7%   2.1%] skips [ 51.6%   4.7%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 13.1%   4.9%   2.9%   0.3%] skips [ 57.5%   6.9%   0.0%   0.0%]
+Eval for #4   35/240 accuracy =  14.6% [ 10.0%   3.8%   0.8%   0.0%] skips [ 80.4%   3.3%   0.0%   0.0%]
+Eval global  697/1346 accuracy = 51.8%
+Eval for #1  420/420 accuracy = 100.0% [ 91.4%   4.8%   3.1%   0.7%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  175/380 accuracy =  46.1% [ 36.6%   4.7%   2.6%   2.1%] skips [ 53.9%   4.7%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 11.1%   9.2%   2.6%   0.7%] skips [ 61.1%   6.9%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [ 10.4%   2.5%   1.2%   0.0%] skips [ 83.8%   2.5%   0.0%   0.0%]
+Eval global  701/1346 accuracy = 52.1%
+Eval for #1  420/420 accuracy = 100.0% [ 93.3%   4.3%   2.1%   0.2%] skips [  9.8%   0.0%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 38.7%   3.9%   4.5%   1.8%] skips [ 52.9%   5.0%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 11.1%   7.8%   2.6%   0.7%] skips [ 62.1%   7.8%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [  9.2%   4.6%   1.7%   0.0%] skips [ 82.9%   4.2%   0.0%   0.0%]
+Eval global  711/1346 accuracy = 52.8%
+Eval for #1  419/420 accuracy =  99.8% [ 92.9%   5.7%   1.2%   0.0%] skips [  9.8%   0.0%   0.0%   0.0%]
+Eval for #2  189/380 accuracy =  49.7% [ 39.2%   5.3%   3.7%   1.6%] skips [ 53.7%   5.0%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 10.8%   8.2%   3.9%   0.3%] skips [ 62.7%   7.5%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [ 10.0%   4.2%   1.2%   0.0%] skips [ 84.6%   4.2%   0.0%   0.0%]
+Eval global  716/1346 accuracy = 53.2%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 6 --num_neg_samples 5
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  5
+batch_size:       500
+window_size:      6
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   54/420 accuracy =  12.9% [  6.7%   1.9%   3.1%   1.2%] skips [ 20.0%   0.0%   0.0%   0.0%]
+Eval for #2   66/380 accuracy =  17.4% [  7.9%   3.7%   5.5%   0.3%] skips [ 41.3%   0.8%   0.0%   0.0%]
+Eval for #3    3/306 accuracy =   1.0% [  0.0%   0.3%   0.7%   0.0%] skips [ 29.4%   0.3%   0.0%   0.0%]
+Eval for #4    4/240 accuracy =   1.7% [  0.0%   0.4%   1.2%   0.0%] skips [ 24.2%   0.4%   0.0%   0.0%]
+Eval global  127/1346 accuracy =  9.4%
+Eval for #1  139/420 accuracy =  33.1% [ 20.2%   5.7%   5.0%   2.1%] skips [ 36.4%   0.0%   0.0%   0.0%]
+Eval for #2   97/380 accuracy =  25.5% [ 19.2%   2.9%   1.8%   1.6%] skips [ 48.7%   0.5%   0.0%   0.0%]
+Eval for #3   14/306 accuracy =   4.6% [  2.9%   1.0%   0.0%   0.7%] skips [ 38.9%   1.3%   0.0%   0.0%]
+Eval for #4   14/240 accuracy =   5.8% [  2.1%   2.5%   1.2%   0.0%] skips [ 46.7%   1.2%   0.0%   0.0%]
+Eval global  264/1346 accuracy = 19.6%
+Eval for #1  265/420 accuracy =  63.1% [ 44.8%   9.3%   6.2%   2.9%] skips [ 23.3%   0.0%   0.0%   0.0%]
+Eval for #2  118/380 accuracy =  31.1% [ 21.1%   4.2%   4.2%   1.6%] skips [ 47.6%   2.9%   0.0%   0.0%]
+Eval for #3   26/306 accuracy =   8.5% [  2.9%   3.3%   1.6%   0.7%] skips [ 38.2%   2.3%   0.0%   0.0%]
+Eval for #4   12/240 accuracy =   5.0% [  2.9%   1.2%   0.8%   0.0%] skips [ 58.8%   1.2%   0.0%   0.0%]
+Eval global  421/1346 accuracy = 31.3%
+Eval for #1  339/420 accuracy =  80.7% [ 63.3%   9.5%   6.0%   1.9%] skips [ 15.7%   0.0%   0.0%   0.0%]
+Eval for #2  143/380 accuracy =  37.6% [ 28.4%   3.4%   3.2%   2.6%] skips [ 48.2%   2.4%   0.0%   0.0%]
+Eval for #3   57/306 accuracy =  18.6% [  9.2%   5.6%   2.6%   1.3%] skips [ 38.9%   2.0%   0.0%   0.0%]
+Eval for #4   22/240 accuracy =   9.2% [  6.2%   2.1%   0.8%   0.0%] skips [ 64.6%   1.7%   0.0%   0.0%]
+Eval global  561/1346 accuracy = 41.7%
+Eval for #1  380/420 accuracy =  90.5% [ 73.3%   7.6%   6.2%   3.3%] skips [ 11.7%   0.0%   0.0%   0.0%]
+Eval for #2  164/380 accuracy =  43.2% [ 32.1%   5.3%   4.7%   1.1%] skips [ 50.0%   1.8%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 12.7%   5.6%   2.0%   1.0%] skips [ 43.8%   2.0%   0.0%   0.0%]
+Eval for #4   24/240 accuracy =  10.0% [  7.5%   1.7%   0.8%   0.0%] skips [ 65.4%   1.7%   0.0%   0.0%]
+Eval global  633/1346 accuracy = 47.0%
+Eval for #1  400/420 accuracy =  95.2% [ 79.8%   7.4%   4.8%   3.3%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  184/380 accuracy =  48.4% [ 36.1%   6.6%   3.4%   2.4%] skips [ 51.6%   2.9%   0.0%   0.0%]
+Eval for #3   70/306 accuracy =  22.9% [ 14.1%   5.2%   2.6%   1.0%] skips [ 46.7%   3.6%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  8.3%   1.2%   3.3%   0.0%] skips [ 67.5%   1.7%   0.0%   0.0%]
+Eval global  685/1346 accuracy = 50.9%
+Eval for #1  409/420 accuracy =  97.4% [ 86.0%   7.4%   2.9%   1.2%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  188/380 accuracy =  49.5% [ 38.2%   6.6%   3.7%   1.1%] skips [ 51.8%   3.2%   0.0%   0.0%]
+Eval for #3   73/306 accuracy =  23.9% [ 14.7%   4.6%   3.9%   0.7%] skips [ 48.7%   4.9%   0.0%   0.0%]
+Eval for #4   37/240 accuracy =  15.4% [  9.2%   3.3%   2.9%   0.0%] skips [ 72.9%   2.1%   0.0%   0.0%]
+Eval global  707/1346 accuracy = 52.5%
+Eval for #1  413/420 accuracy =  98.3% [ 88.1%   6.9%   2.9%   0.5%] skips [  7.1%   0.0%   0.0%   0.0%]
+Eval for #2  194/380 accuracy =  51.1% [ 38.4%   6.6%   3.4%   2.6%] skips [ 52.4%   3.2%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 12.7%   7.2%   1.6%   0.7%] skips [ 53.3%   4.9%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [  8.8%   3.3%   2.9%   0.0%] skips [ 77.5%   2.9%   0.0%   0.0%]
+Eval global  711/1346 accuracy = 52.8%
+Eval for #1  416/420 accuracy =  99.0% [ 91.0%   5.0%   2.6%   0.5%] skips [  7.1%   0.0%   0.0%   0.0%]
+Eval for #2  192/380 accuracy =  50.5% [ 38.9%   6.3%   3.4%   1.8%] skips [ 51.6%   3.4%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 13.1%   6.5%   2.3%   1.6%] skips [ 55.2%   5.6%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [  8.8%   2.1%   3.3%   0.0%] skips [ 78.8%   3.3%   0.0%   0.0%]
+Eval global  714/1346 accuracy = 53.0%
+Eval for #1  417/420 accuracy =  99.3% [ 91.4%   5.0%   2.4%   0.5%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  199/380 accuracy =  52.4% [ 38.7%   7.1%   3.9%   2.6%] skips [ 50.3%   4.2%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 12.7%   7.2%   2.9%   1.3%] skips [ 56.9%   5.6%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [  8.3%   3.3%   2.5%   0.0%] skips [ 79.6%   4.2%   0.0%   0.0%]
+Eval global  724/1346 accuracy = 53.8%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 6 --num_neg_samples 3
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       500
+window_size:      6
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   37/420 accuracy =   8.8% [  4.0%   1.7%   1.4%   1.7%] skips [ 10.0%   0.0%   0.0%   0.0%]
+Eval for #2   48/380 accuracy =  12.6% [  7.4%   3.4%   1.6%   0.3%] skips [ 38.9%   0.5%   0.0%   0.0%]
+Eval for #3    3/306 accuracy =   1.0% [  0.0%   1.0%   0.0%   0.0%] skips [ 22.2%   0.0%   0.0%   0.0%]
+Eval for #4    5/240 accuracy =   2.1% [  0.4%   0.4%   1.2%   0.0%] skips [ 25.4%   1.2%   0.0%   0.0%]
+Eval global   93/1346 accuracy =  6.9%
+Eval for #1   98/420 accuracy =  23.3% [ 13.6%   5.7%   2.6%   1.4%] skips [ 28.3%   0.2%   0.0%   0.0%]
+Eval for #2   87/380 accuracy =  22.9% [ 14.7%   4.5%   2.6%   1.1%] skips [ 48.7%   0.5%   0.0%   0.0%]
+Eval for #3   12/306 accuracy =   3.9% [  1.6%   1.0%   0.7%   0.7%] skips [ 35.0%   0.7%   0.0%   0.0%]
+Eval for #4    7/240 accuracy =   2.9% [  0.8%   1.2%   0.8%   0.0%] skips [ 33.3%   1.7%   0.0%   0.0%]
+Eval global  204/1346 accuracy = 15.2%
+Eval for #1  212/420 accuracy =  50.5% [ 34.0%   7.6%   6.2%   2.6%] skips [ 24.3%   0.2%   0.0%   0.0%]
+Eval for #2  112/380 accuracy =  29.5% [ 19.7%   5.8%   2.1%   1.8%] skips [ 45.0%   1.3%   0.0%   0.0%]
+Eval for #3   23/306 accuracy =   7.5% [  2.9%   2.6%   1.6%   0.3%] skips [ 34.6%   1.6%   0.0%   0.0%]
+Eval for #4   11/240 accuracy =   4.6% [  2.5%   1.2%   0.4%   0.4%] skips [ 49.6%   1.2%   0.0%   0.0%]
+Eval global  358/1346 accuracy = 26.6%
+Eval for #1  300/420 accuracy =  71.4% [ 53.8%  10.0%   4.5%   3.1%] skips [ 15.2%   0.0%   0.0%   0.0%]
+Eval for #2  136/380 accuracy =  35.8% [ 25.0%   5.8%   2.9%   2.1%] skips [ 46.3%   1.1%   0.0%   0.0%]
+Eval for #3   46/306 accuracy =  15.0% [  6.2%   4.6%   2.0%   2.3%] skips [ 39.2%   1.6%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  3.8%   1.7%   0.8%   0.0%] skips [ 59.2%   1.2%   0.0%   0.0%]
+Eval global  497/1346 accuracy = 36.9%
+Eval for #1  345/420 accuracy =  82.1% [ 67.4%   8.3%   3.1%   3.3%] skips [ 13.8%   0.0%   0.0%   0.0%]
+Eval for #2  145/380 accuracy =  38.2% [ 28.7%   4.7%   2.6%   2.1%] skips [ 44.7%   1.3%   0.0%   0.0%]
+Eval for #3   56/306 accuracy =  18.3% [  9.2%   4.6%   3.6%   1.0%] skips [ 39.9%   2.0%   0.0%   0.0%]
+Eval for #4   22/240 accuracy =   9.2% [  4.6%   1.2%   2.9%   0.4%] skips [ 64.2%   1.7%   0.0%   0.0%]
+Eval global  568/1346 accuracy = 42.2%
+Eval for #1  368/420 accuracy =  87.6% [ 73.8%   5.2%   4.5%   4.0%] skips [ 11.4%   0.0%   0.0%   0.0%]
+Eval for #2  168/380 accuracy =  44.2% [ 33.4%   5.3%   3.2%   2.4%] skips [ 48.9%   1.3%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 12.1%   5.6%   2.6%   1.3%] skips [ 41.2%   2.3%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  7.1%   1.7%   1.7%   0.4%] skips [ 65.4%   1.2%   0.0%   0.0%]
+Eval global  628/1346 accuracy = 46.7%
+Eval for #1  390/420 accuracy =  92.9% [ 78.1%   7.6%   3.1%   4.0%] skips [ 10.2%   0.0%   0.0%   0.0%]
+Eval for #2  183/380 accuracy =  48.2% [ 35.0%   7.6%   2.6%   2.9%] skips [ 49.2%   2.1%   0.0%   0.0%]
+Eval for #3   73/306 accuracy =  23.9% [ 13.1%   4.2%   3.6%   2.9%] skips [ 44.4%   2.6%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  6.7%   5.0%   0.8%   0.4%] skips [ 65.4%   1.7%   0.0%   0.0%]
+Eval global  677/1346 accuracy = 50.3%
+Eval for #1  402/420 accuracy =  95.7% [ 81.9%   8.1%   4.3%   1.4%] skips [  7.6%   0.0%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 37.1%   7.4%   2.9%   1.6%] skips [ 51.8%   2.9%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 13.1%   5.2%   2.3%   1.6%] skips [ 47.4%   3.3%   0.0%   0.0%]
+Eval for #4   33/240 accuracy =  13.8% [  6.7%   3.3%   3.8%   0.0%] skips [ 68.3%   1.2%   0.0%   0.0%]
+Eval global  689/1346 accuracy = 51.2%
+Eval for #1  408/420 accuracy =  97.1% [ 85.0%   6.7%   5.2%   0.2%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  187/380 accuracy =  49.2% [ 37.9%   6.8%   3.2%   1.3%] skips [ 50.3%   3.7%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 12.4%   6.2%   3.6%   1.3%] skips [ 49.3%   3.6%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  7.5%   3.3%   1.7%   0.0%] skips [ 68.8%   2.1%   0.0%   0.0%]
+Eval global  697/1346 accuracy = 51.8%
+Eval for #1  410/420 accuracy =  97.6% [ 85.5%   7.1%   4.3%   0.7%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  192/380 accuracy =  50.5% [ 39.2%   7.1%   2.6%   1.6%] skips [ 50.0%   3.2%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 12.7%   6.9%   2.9%   0.7%] skips [ 50.7%   4.6%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [  7.9%   3.8%   2.1%   0.4%] skips [ 70.4%   2.9%   0.0%   0.0%]
+Eval global  707/1346 accuracy = 52.5%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 6 --num_neg_samples 2
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  2
+batch_size:       500
+window_size:      6
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.5%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   47/420 accuracy =  11.2% [  3.8%   3.6%   2.9%   1.0%] skips [ 19.5%   0.2%   0.0%   0.0%]
+Eval for #2   49/380 accuracy =  12.9% [  9.2%   1.1%   2.1%   0.5%] skips [ 50.8%   1.8%   0.0%   0.0%]
+Eval for #3    2/306 accuracy =   0.7% [  0.7%   0.0%   0.0%   0.0%] skips [ 27.1%   0.7%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.0%   0.4%   0.0%   0.0%] skips [ 35.0%   1.2%   0.0%   0.0%]
+Eval global   99/1346 accuracy =  7.4%
+Eval for #1  141/420 accuracy =  33.6% [ 15.7%   9.0%   5.7%   3.1%] skips [ 27.6%   0.2%   0.0%   0.0%]
+Eval for #2   74/380 accuracy =  19.5% [ 15.8%   1.6%   1.6%   0.5%] skips [ 42.6%   0.5%   0.0%   0.0%]
+Eval for #3    9/306 accuracy =   2.9% [  1.3%   0.7%   1.0%   0.0%] skips [ 32.7%   0.3%   0.0%   0.0%]
+Eval for #4    2/240 accuracy =   0.8% [  0.0%   0.0%   0.4%   0.4%] skips [ 27.5%   0.0%   0.0%   0.0%]
+Eval global  226/1346 accuracy = 16.8%
+Eval for #1  221/420 accuracy =  52.6% [ 32.1%  10.7%   6.4%   3.3%] skips [ 21.7%   0.0%   0.0%   0.0%]
+Eval for #2  100/380 accuracy =  26.3% [ 21.3%   3.2%   1.3%   0.5%] skips [ 42.9%   0.3%   0.0%   0.0%]
+Eval for #3   18/306 accuracy =   5.9% [  1.6%   0.7%   3.6%   0.0%] skips [ 34.3%   1.6%   0.0%   0.0%]
+Eval for #4    8/240 accuracy =   3.3% [  1.7%   0.4%   1.2%   0.0%] skips [ 40.8%   0.8%   0.0%   0.0%]
+Eval global  347/1346 accuracy = 25.8%
+Eval for #1  277/420 accuracy =  66.0% [ 43.8%  11.2%   6.9%   4.0%] skips [ 14.3%   0.0%   0.0%   0.0%]
+Eval for #2  122/380 accuracy =  32.1% [ 21.8%   5.0%   3.7%   1.6%] skips [ 43.4%   1.3%   0.0%   0.0%]
+Eval for #3   32/306 accuracy =  10.5% [  4.6%   2.6%   2.6%   0.7%] skips [ 35.9%   1.0%   0.0%   0.0%]
+Eval for #4   11/240 accuracy =   4.6% [  1.7%   0.8%   2.1%   0.0%] skips [ 45.4%   0.8%   0.0%   0.0%]
+Eval global  442/1346 accuracy = 32.8%
+Eval for #1  322/420 accuracy =  76.7% [ 56.7%  10.5%   6.0%   3.6%] skips [ 12.9%   0.0%   0.0%   0.0%]
+Eval for #2  143/380 accuracy =  37.6% [ 24.7%   6.3%   3.2%   3.4%] skips [ 45.0%   0.8%   0.0%   0.0%]
+Eval for #3   48/306 accuracy =  15.7% [  7.2%   4.9%   2.6%   1.0%] skips [ 37.6%   1.3%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  3.3%   1.7%   1.2%   0.0%] skips [ 51.7%   1.2%   0.0%   0.0%]
+Eval global  528/1346 accuracy = 39.2%
+Eval for #1  347/420 accuracy =  82.6% [ 66.2%  10.2%   3.6%   2.6%] skips [ 11.9%   0.0%   0.0%   0.0%]
+Eval for #2  172/380 accuracy =  45.3% [ 29.5%   7.4%   5.5%   2.9%] skips [ 45.8%   0.8%   0.0%   0.0%]
+Eval for #3   55/306 accuracy =  18.0% [ 10.8%   3.6%   2.3%   1.3%] skips [ 37.3%   2.0%   0.0%   0.0%]
+Eval for #4   16/240 accuracy =   6.7% [  4.2%   1.7%   0.8%   0.0%] skips [ 55.0%   1.7%   0.0%   0.0%]
+Eval global  590/1346 accuracy = 43.8%
+Eval for #1  369/420 accuracy =  87.9% [ 73.1%   7.4%   4.8%   2.6%] skips [  9.0%   0.0%   0.0%   0.0%]
+Eval for #2  179/380 accuracy =  47.1% [ 34.5%   6.1%   5.5%   1.1%] skips [ 46.6%   0.8%   0.0%   0.0%]
+Eval for #3   60/306 accuracy =  19.6% [ 11.4%   4.9%   2.3%   1.0%] skips [ 41.8%   2.0%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  5.0%   1.7%   1.2%   0.0%] skips [ 56.7%   1.2%   0.0%   0.0%]
+Eval global  627/1346 accuracy = 46.6%
+Eval for #1  381/420 accuracy =  90.7% [ 74.5%  10.5%   3.8%   1.9%] skips [  8.6%   0.0%   0.0%   0.0%]
+Eval for #2  189/380 accuracy =  49.7% [ 35.8%   7.9%   4.2%   1.8%] skips [ 46.8%   2.1%   0.0%   0.0%]
+Eval for #3   60/306 accuracy =  19.6% [ 13.1%   3.3%   2.6%   0.7%] skips [ 42.2%   2.3%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  6.2%   0.8%   0.8%   0.0%] skips [ 59.2%   1.7%   0.0%   0.0%]
+Eval global  649/1346 accuracy = 48.2%
+Eval for #1  395/420 accuracy =  94.0% [ 77.9%   8.6%   4.5%   3.1%] skips [  8.1%   0.0%   0.0%   0.0%]
+Eval for #2  193/380 accuracy =  50.8% [ 39.5%   6.3%   3.9%   1.1%] skips [ 46.6%   2.4%   0.0%   0.0%]
+Eval for #3   61/306 accuracy =  19.9% [ 12.4%   4.6%   2.3%   0.7%] skips [ 44.4%   2.6%   0.0%   0.0%]
+Eval for #4   23/240 accuracy =   9.6% [  6.2%   1.2%   2.1%   0.0%] skips [ 60.0%   1.7%   0.0%   0.0%]
+Eval global  672/1346 accuracy = 49.9%
+Eval for #1  396/420 accuracy =  94.3% [ 80.7%   8.1%   2.9%   2.6%] skips [  7.6%   0.0%   0.0%   0.0%]
+Eval for #2  202/380 accuracy =  53.2% [ 40.5%   6.8%   3.2%   2.6%] skips [ 46.8%   2.4%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 11.8%   4.9%   3.3%   1.3%] skips [ 44.8%   2.9%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  6.7%   2.1%   1.2%   0.4%] skips [ 60.4%   2.1%   0.0%   0.0%]
+Eval global  688/1346 accuracy = 51.1%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 6 --num_neg_samples 1
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  1
+batch_size:       500
+window_size:      6
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.7%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   38/420 accuracy =   9.0% [  3.6%   3.3%   2.1%   0.0%] skips [ 52.1%   8.1%   0.0%   0.0%]
+Eval for #2   30/380 accuracy =   7.9% [  4.2%   1.1%   2.6%   0.0%] skips [ 51.1%   3.2%   0.0%   0.0%]
+Eval for #3    4/306 accuracy =   1.3% [  0.0%   0.3%   0.7%   0.3%] skips [ 59.8%   4.6%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.4%   0.0%   0.0%   0.0%] skips [ 58.8%  19.6%   0.0%   0.0%]
+Eval global   73/1346 accuracy =  5.4%
+Eval for #1  123/420 accuracy =  29.3% [ 16.4%   7.6%   3.8%   1.4%] skips [ 24.3%   0.2%   0.5%   0.0%]
+Eval for #2   67/380 accuracy =  17.6% [ 12.1%   2.9%   1.6%   1.1%] skips [ 35.3%   0.8%   0.0%   0.0%]
+Eval for #3    5/306 accuracy =   1.6% [  1.0%   0.3%   0.3%   0.0%] skips [ 23.5%   0.0%   0.0%   0.0%]
+Eval for #4    5/240 accuracy =   2.1% [  1.2%   0.8%   0.0%   0.0%] skips [ 37.9%   0.8%   0.0%   0.0%]
+Eval global  200/1346 accuracy = 14.9%
+Eval for #1  182/420 accuracy =  43.3% [ 25.2%  10.2%   4.8%   3.1%] skips [ 13.8%   0.2%   0.0%   0.0%]
+Eval for #2   73/380 accuracy =  19.2% [ 13.9%   3.4%   1.3%   0.5%] skips [ 33.7%   0.3%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  2.0%   1.0%   1.0%   0.3%] skips [ 20.3%   0.3%   0.0%   0.0%]
+Eval for #4    6/240 accuracy =   2.5% [  2.1%   0.4%   0.0%   0.0%] skips [ 31.7%   0.0%   0.0%   0.0%]
+Eval global  274/1346 accuracy = 20.4%
+Eval for #1  225/420 accuracy =  53.6% [ 33.1%  12.1%   5.7%   2.6%] skips [ 10.0%   0.0%   0.0%   0.0%]
+Eval for #2   97/380 accuracy =  25.5% [ 18.2%   4.2%   1.3%   1.8%] skips [ 28.2%   0.3%   0.0%   0.0%]
+Eval for #3   35/306 accuracy =  11.4% [  4.2%   4.2%   2.3%   0.7%] skips [ 19.3%   0.3%   0.0%   0.0%]
+Eval for #4    6/240 accuracy =   2.5% [  1.7%   0.4%   0.4%   0.0%] skips [ 32.1%   0.0%   0.0%   0.0%]
+Eval global  363/1346 accuracy = 27.0%
+Eval for #1  260/420 accuracy =  61.9% [ 42.1%   7.6%   7.1%   5.0%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  111/380 accuracy =  29.2% [ 21.1%   3.4%   2.4%   2.4%] skips [ 34.2%   0.3%   0.0%   0.0%]
+Eval for #3   45/306 accuracy =  14.7% [  7.5%   3.3%   2.0%   2.0%] skips [ 19.6%   1.0%   0.0%   0.0%]
+Eval for #4    7/240 accuracy =   2.9% [  1.7%   0.0%   0.8%   0.4%] skips [ 35.4%   0.4%   0.0%   0.0%]
+Eval global  423/1346 accuracy = 31.4%
+Eval for #1  299/420 accuracy =  71.2% [ 51.4%   9.0%   6.4%   4.3%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  122/380 accuracy =  32.1% [ 22.9%   4.7%   3.2%   1.3%] skips [ 34.5%   0.3%   0.0%   0.0%]
+Eval for #3   52/306 accuracy =  17.0% [  8.5%   5.6%   2.0%   1.0%] skips [ 24.5%   1.6%   0.0%   0.0%]
+Eval for #4    8/240 accuracy =   3.3% [  2.5%   0.4%   0.4%   0.0%] skips [ 37.9%   0.8%   0.0%   0.0%]
+Eval global  481/1346 accuracy = 35.7%
+Eval for #1  319/420 accuracy =  76.0% [ 55.2%   9.8%   7.4%   3.6%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  148/380 accuracy =  38.9% [ 27.9%   4.7%   3.4%   2.9%] skips [ 33.9%   0.3%   0.0%   0.0%]
+Eval for #3   58/306 accuracy =  19.0% [  9.8%   4.9%   2.6%   1.6%] skips [ 25.5%   1.6%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  2.9%   0.4%   0.8%   0.0%] skips [ 41.2%   1.2%   0.0%   0.0%]
+Eval global  535/1346 accuracy = 39.7%
+Eval for #1  353/420 accuracy =  84.0% [ 63.6%  10.7%   6.4%   3.3%] skips [  6.4%   0.0%   0.0%   0.0%]
+Eval for #2  153/380 accuracy =  40.3% [ 29.2%   5.3%   3.4%   2.4%] skips [ 33.4%   0.3%   0.0%   0.0%]
+Eval for #3   57/306 accuracy =  18.6% [ 10.8%   3.3%   2.6%   2.0%] skips [ 30.1%   2.0%   0.0%   0.0%]
+Eval for #4   11/240 accuracy =   4.6% [  3.3%   0.4%   0.8%   0.0%] skips [ 42.9%   1.2%   0.0%   0.0%]
+Eval global  574/1346 accuracy = 42.6%
+Eval for #1  356/420 accuracy =  84.8% [ 67.4%   7.1%   7.6%   2.6%] skips [  6.0%   0.0%   0.0%   0.0%]
+Eval for #2  163/380 accuracy =  42.9% [ 31.3%   6.1%   3.4%   2.1%] skips [ 33.9%   0.5%   0.0%   0.0%]
+Eval for #3   57/306 accuracy =  18.6% [ 10.8%   4.2%   2.3%   1.3%] skips [ 33.0%   2.0%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  2.5%   2.1%   0.8%   0.0%] skips [ 47.1%   1.2%   0.0%   0.0%]
+Eval global  589/1346 accuracy = 43.8%
+Eval for #1  361/420 accuracy =  86.0% [ 68.6%   7.6%   6.7%   3.1%] skips [  6.0%   0.0%   0.0%   0.0%]
+Eval for #2  168/380 accuracy =  44.2% [ 31.8%   6.8%   3.4%   2.1%] skips [ 34.5%   0.3%   0.0%   0.0%]
+Eval for #3   58/306 accuracy =  19.0% [ 11.1%   3.3%   2.6%   2.0%] skips [ 35.6%   2.0%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  2.9%   1.7%   1.2%   0.4%] skips [ 49.2%   1.2%   0.0%   0.0%]
+Eval global  602/1346 accuracy = 44.7%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 6 --num_neg_samples 4
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  4
+batch_size:       500
+window_size:      6
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.5%  99.5%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.8%  98.2%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.3%  99.7%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   39/420 accuracy =   9.3% [  3.8%   2.9%   1.7%   1.0%] skips [ 13.3%   0.0%   0.0%   0.0%]
+Eval for #2   42/380 accuracy =  11.1% [  4.5%   2.9%   3.2%   0.5%] skips [ 32.4%   0.5%   0.0%   0.0%]
+Eval for #3    9/306 accuracy =   2.9% [  1.3%   0.3%   1.0%   0.3%] skips [ 22.9%   0.3%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.0%   0.0%   0.4%   0.0%] skips [ 23.3%   0.4%   0.0%   0.0%]
+Eval global   91/1346 accuracy =  6.8%
+Eval for #1  109/420 accuracy =  26.0% [ 15.5%   3.6%   5.2%   1.7%] skips [ 31.9%   0.2%   0.0%   0.0%]
+Eval for #2   91/380 accuracy =  23.9% [ 18.9%   2.9%   1.1%   1.1%] skips [ 47.1%   0.3%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  2.9%   1.0%   0.3%   0.0%] skips [ 37.6%   1.0%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  1.2%   1.7%   0.8%   0.0%] skips [ 42.5%   0.8%   0.0%   0.0%]
+Eval global  222/1346 accuracy = 16.5%
+Eval for #1  248/420 accuracy =  59.0% [ 39.8%  10.0%   5.0%   4.3%] skips [ 23.3%   0.0%   0.0%   0.0%]
+Eval for #2  110/380 accuracy =  28.9% [ 20.5%   4.7%   2.1%   1.6%] skips [ 48.2%   2.4%   0.0%   0.0%]
+Eval for #3   22/306 accuracy =   7.2% [  3.6%   2.0%   1.6%   0.0%] skips [ 37.3%   1.3%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  2.9%   1.2%   0.0%   0.0%] skips [ 54.2%   1.2%   0.0%   0.0%]
+Eval global  390/1346 accuracy = 29.0%
+Eval for #1  328/420 accuracy =  78.1% [ 60.0%   9.8%   5.2%   3.1%] skips [ 15.7%   0.0%   0.0%   0.0%]
+Eval for #2  136/380 accuracy =  35.8% [ 25.8%   4.2%   3.7%   2.1%] skips [ 49.2%   1.3%   0.0%   0.0%]
+Eval for #3   52/306 accuracy =  17.0% [  6.9%   4.6%   3.9%   1.6%] skips [ 37.3%   1.6%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  4.6%   0.8%   0.8%   0.0%] skips [ 63.8%   1.7%   0.0%   0.0%]
+Eval global  531/1346 accuracy = 39.5%
+Eval for #1  364/420 accuracy =  86.7% [ 71.0%   6.7%   5.7%   3.3%] skips [ 13.1%   0.0%   0.0%   0.0%]
+Eval for #2  152/380 accuracy =  40.0% [ 29.7%   5.3%   3.2%   1.8%] skips [ 51.1%   2.1%   0.0%   0.0%]
+Eval for #3   63/306 accuracy =  20.6% [  9.5%   5.9%   4.2%   1.0%] skips [ 39.2%   2.3%   0.0%   0.0%]
+Eval for #4   27/240 accuracy =  11.2% [  5.8%   1.7%   2.9%   0.8%] skips [ 65.0%   1.2%   0.0%   0.0%]
+Eval global  606/1346 accuracy = 45.0%
+Eval for #1  391/420 accuracy =  93.1% [ 76.7%   8.6%   4.0%   3.8%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  172/380 accuracy =  45.3% [ 33.2%   6.8%   3.7%   1.6%] skips [ 51.6%   1.6%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 12.4%   5.2%   3.3%   0.3%] skips [ 42.2%   3.6%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  6.7%   4.6%   0.4%   0.4%] skips [ 66.2%   1.2%   0.0%   0.0%]
+Eval global  657/1346 accuracy = 48.8%
+Eval for #1  402/420 accuracy =  95.7% [ 80.5%   8.1%   5.5%   1.7%] skips [  9.0%   0.0%   0.0%   0.0%]
+Eval for #2  179/380 accuracy =  47.1% [ 35.8%   6.8%   2.9%   1.6%] skips [ 51.6%   2.9%   0.0%   0.0%]
+Eval for #3   70/306 accuracy =  22.9% [ 13.1%   3.9%   4.6%   1.3%] skips [ 46.7%   3.3%   0.0%   0.0%]
+Eval for #4   34/240 accuracy =  14.2% [  9.2%   3.8%   1.2%   0.0%] skips [ 68.8%   1.2%   0.0%   0.0%]
+Eval global  685/1346 accuracy = 50.9%
+Eval for #1  411/420 accuracy =  97.9% [ 83.6%   8.3%   4.5%   1.4%] skips [  7.6%   0.0%   0.0%   0.0%]
+Eval for #2  180/380 accuracy =  47.4% [ 36.1%   7.1%   3.2%   1.1%] skips [ 52.9%   3.2%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 12.4%   7.2%   2.3%   1.3%] skips [ 49.0%   4.2%   0.0%   0.0%]
+Eval for #4   38/240 accuracy =  15.8% [  8.8%   4.2%   2.9%   0.0%] skips [ 72.1%   2.1%   0.0%   0.0%]
+Eval global  700/1346 accuracy = 52.0%
+Eval for #1  413/420 accuracy =  98.3% [ 87.1%   7.4%   2.9%   1.0%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  183/380 accuracy =  48.2% [ 38.2%   5.0%   3.4%   1.6%] skips [ 52.1%   3.7%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 12.1%   6.9%   2.6%   2.0%] skips [ 52.3%   4.2%   0.0%   0.0%]
+Eval for #4   38/240 accuracy =  15.8% [  9.2%   3.8%   2.9%   0.0%] skips [ 73.8%   2.1%   0.0%   0.0%]
+Eval global  706/1346 accuracy = 52.5%
+Eval for #1  416/420 accuracy =  99.0% [ 89.3%   6.4%   2.9%   0.5%] skips [  7.9%   0.0%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 38.9%   5.8%   3.2%   1.1%] skips [ 52.9%   2.9%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 12.1%   7.2%   3.9%   1.0%] skips [ 56.2%   4.9%   0.0%   0.0%]
+Eval for #4   36/240 accuracy =  15.0% [  9.6%   3.8%   1.7%   0.0%] skips [ 74.6%   2.1%   0.0%   0.0%]
+Eval global  712/1346 accuracy = 52.9%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 7 --num_neg_samples 3
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       500
+window_size:      7
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.5%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   44/420 accuracy =  10.5% [  5.0%   1.7%   2.9%   1.0%] skips [ 12.9%   0.0%   0.0%   0.0%]
+Eval for #2   36/380 accuracy =   9.5% [  3.7%   3.4%   1.8%   0.5%] skips [ 32.9%   1.3%   0.0%   0.0%]
+Eval for #3    3/306 accuracy =   1.0% [  0.7%   0.0%   0.3%   0.0%] skips [ 21.2%   0.3%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.0%   0.4%   0.0%   0.0%] skips [ 19.2%   0.4%   0.0%   0.0%]
+Eval global   84/1346 accuracy =  6.2%
+Eval for #1  118/420 accuracy =  28.1% [ 14.8%   5.2%   5.0%   3.1%] skips [ 23.3%   0.0%   0.0%   0.0%]
+Eval for #2   96/380 accuracy =  25.3% [ 16.6%   6.3%   1.8%   0.5%] skips [ 47.6%   1.1%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  1.3%   1.3%   0.3%   1.3%] skips [ 35.3%   0.7%   0.0%   0.0%]
+Eval for #4    5/240 accuracy =   2.1% [  0.8%   0.8%   0.4%   0.0%] skips [ 37.5%   0.4%   0.0%   0.0%]
+Eval global  232/1346 accuracy = 17.2%
+Eval for #1  224/420 accuracy =  53.3% [ 38.3%   7.4%   5.5%   2.1%] skips [ 19.3%   0.0%   0.0%   0.0%]
+Eval for #2  114/380 accuracy =  30.0% [ 21.6%   4.7%   3.2%   0.5%] skips [ 42.9%   2.1%   0.0%   0.0%]
+Eval for #3   22/306 accuracy =   7.2% [  2.6%   2.9%   1.6%   0.0%] skips [ 36.6%   1.3%   0.0%   0.0%]
+Eval for #4   12/240 accuracy =   5.0% [  2.1%   1.2%   1.2%   0.4%] skips [ 49.2%   1.2%   0.0%   0.0%]
+Eval global  372/1346 accuracy = 27.6%
+Eval for #1  305/420 accuracy =  72.6% [ 58.3%   6.2%   5.0%   3.1%] skips [ 14.3%   0.2%   0.0%   0.0%]
+Eval for #2  140/380 accuracy =  36.8% [ 24.2%   6.6%   3.9%   2.1%] skips [ 44.2%   1.3%   0.0%   0.0%]
+Eval for #3   46/306 accuracy =  15.0% [  5.9%   5.2%   2.6%   1.3%] skips [ 37.9%   1.6%   0.0%   0.0%]
+Eval for #4   16/240 accuracy =   6.7% [  2.5%   2.1%   1.7%   0.4%] skips [ 59.2%   1.2%   0.0%   0.0%]
+Eval global  507/1346 accuracy = 37.7%
+Eval for #1  353/420 accuracy =  84.0% [ 69.8%   7.9%   4.3%   2.1%] skips [ 10.7%   0.0%   0.0%   0.0%]
+Eval for #2  162/380 accuracy =  42.6% [ 29.5%   6.3%   4.5%   2.4%] skips [ 45.0%   1.8%   0.0%   0.0%]
+Eval for #3   60/306 accuracy =  19.6% [  9.8%   5.6%   2.9%   1.3%] skips [ 41.5%   2.0%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  5.0%   0.8%   1.7%   0.4%] skips [ 64.6%   1.7%   0.0%   0.0%]
+Eval global  594/1346 accuracy = 44.1%
+Eval for #1  384/420 accuracy =  91.4% [ 76.9%   7.1%   5.2%   2.1%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  182/380 accuracy =  47.9% [ 35.5%   6.6%   3.4%   2.4%] skips [ 46.6%   2.1%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 12.7%   5.6%   2.6%   0.7%] skips [ 44.4%   1.6%   0.0%   0.0%]
+Eval for #4   22/240 accuracy =   9.2% [  5.8%   1.7%   1.7%   0.0%] skips [ 65.4%   1.7%   0.0%   0.0%]
+Eval global  654/1346 accuracy = 48.6%
+Eval for #1  396/420 accuracy =  94.3% [ 81.9%   6.9%   4.3%   1.2%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  182/380 accuracy =  47.9% [ 35.5%   7.1%   4.2%   1.1%] skips [ 46.3%   3.4%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 12.4%   4.6%   2.3%   1.6%] skips [ 47.7%   2.3%   0.0%   0.0%]
+Eval for #4   23/240 accuracy =   9.6% [  6.7%   1.2%   1.7%   0.0%] skips [ 66.2%   1.7%   0.0%   0.0%]
+Eval global  665/1346 accuracy = 49.4%
+Eval for #1  409/420 accuracy =  97.4% [ 85.5%   7.1%   3.6%   1.2%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  192/380 accuracy =  50.5% [ 37.9%   5.5%   4.2%   2.9%] skips [ 48.9%   3.9%   0.0%   0.0%]
+Eval for #3   67/306 accuracy =  21.9% [ 11.1%   7.5%   2.3%   1.0%] skips [ 53.6%   2.9%   0.0%   0.0%]
+Eval for #4   27/240 accuracy =  11.2% [  6.7%   1.7%   2.9%   0.0%] skips [ 69.2%   2.1%   0.0%   0.0%]
+Eval global  695/1346 accuracy = 51.6%
+Eval for #1  412/420 accuracy =  98.1% [ 87.9%   7.4%   2.4%   0.5%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  196/380 accuracy =  51.6% [ 39.5%   6.3%   3.4%   2.4%] skips [ 47.9%   3.7%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 11.1%   6.5%   2.6%   1.0%] skips [ 54.2%   2.9%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  7.5%   2.5%   2.9%   0.0%] skips [ 72.1%   2.1%   0.0%   0.0%]
+Eval global  704/1346 accuracy = 52.3%
+Eval for #1  415/420 accuracy =  98.8% [ 87.9%   8.1%   2.1%   0.7%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  203/380 accuracy =  53.4% [ 40.5%   6.8%   4.7%   1.3%] skips [ 47.6%   3.9%   0.0%   0.0%]
+Eval for #3   67/306 accuracy =  21.9% [ 11.8%   6.9%   2.3%   1.0%] skips [ 53.9%   3.9%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  7.1%   2.9%   2.5%   0.0%] skips [ 74.2%   2.5%   0.0%   0.0%]
+Eval global  715/1346 accuracy = 53.1%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 8 --num_neg_samples 3
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       500
+window_size:      8
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    3/380 accuracy =   0.8% [  0.8%   0.0%   0.0%   0.0%] skips [  1.1%  98.7%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    3/1346 accuracy =  0.2%
+Eval for #1   63/420 accuracy =  15.0% [  9.5%   2.6%   1.9%   1.0%] skips [ 12.6%   0.0%   0.0%   0.0%]
+Eval for #2   39/380 accuracy =  10.3% [  7.1%   2.4%   0.5%   0.3%] skips [ 38.9%   0.8%   0.0%   0.0%]
+Eval for #3    5/306 accuracy =   1.6% [  0.3%   0.7%   0.3%   0.3%] skips [ 25.2%   0.3%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.0%   0.4%   0.0%   0.0%] skips [ 17.9%   0.4%   0.0%   0.0%]
+Eval global  108/1346 accuracy =  8.0%
+Eval for #1  133/420 accuracy =  31.7% [ 17.6%   8.6%   4.0%   1.4%] skips [ 24.0%   0.2%   0.0%   0.0%]
+Eval for #2   96/380 accuracy =  25.3% [ 17.1%   3.4%   3.7%   1.1%] skips [ 42.9%   0.5%   0.0%   0.0%]
+Eval for #3   12/306 accuracy =   3.9% [  2.0%   0.3%   1.3%   0.3%] skips [ 34.6%   0.3%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  1.2%   1.2%   1.2%   0.0%] skips [ 35.8%   0.0%   0.0%   0.0%]
+Eval global  250/1346 accuracy = 18.6%
+Eval for #1  247/420 accuracy =  58.8% [ 41.0%   8.3%   6.2%   3.3%] skips [ 16.0%   0.0%   0.0%   0.0%]
+Eval for #2  116/380 accuracy =  30.5% [ 21.6%   3.7%   3.7%   1.6%] skips [ 41.1%   1.3%   0.0%   0.0%]
+Eval for #3   25/306 accuracy =   8.2% [  3.9%   1.6%   2.0%   0.7%] skips [ 38.6%   1.6%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  2.5%   1.2%   0.0%   0.0%] skips [ 49.6%   1.2%   0.0%   0.0%]
+Eval global  397/1346 accuracy = 29.5%
+Eval for #1  306/420 accuracy =  72.9% [ 61.0%   5.0%   5.0%   1.9%] skips [ 12.6%   0.0%   0.0%   0.0%]
+Eval for #2  147/380 accuracy =  38.7% [ 26.3%   6.6%   3.2%   2.6%] skips [ 45.0%   1.6%   0.0%   0.0%]
+Eval for #3   52/306 accuracy =  17.0% [  8.8%   3.9%   2.9%   1.3%] skips [ 42.2%   1.6%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  3.3%   1.2%   1.7%   0.0%] skips [ 58.8%   0.8%   0.0%   0.0%]
+Eval global  520/1346 accuracy = 38.6%
+Eval for #1  345/420 accuracy =  82.1% [ 69.5%   6.7%   3.1%   2.9%] skips [ 11.2%   0.0%   0.0%   0.0%]
+Eval for #2  176/380 accuracy =  46.3% [ 31.8%   6.6%   5.0%   2.9%] skips [ 47.4%   2.1%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 14.1%   3.6%   2.3%   1.0%] skips [ 42.5%   2.0%   0.0%   0.0%]
+Eval for #4   17/240 accuracy =   7.1% [  4.6%   0.8%   1.2%   0.4%] skips [ 59.6%   2.5%   0.0%   0.0%]
+Eval global  602/1346 accuracy = 44.7%
+Eval for #1  381/420 accuracy =  90.7% [ 74.3%   6.9%   7.9%   1.7%] skips [  7.1%   0.0%   0.0%   0.0%]
+Eval for #2  182/380 accuracy =  47.9% [ 33.7%   7.9%   4.7%   1.6%] skips [ 46.6%   2.4%   0.0%   0.0%]
+Eval for #3   70/306 accuracy =  22.9% [ 12.4%   4.9%   3.3%   2.3%] skips [ 47.4%   2.9%   0.0%   0.0%]
+Eval for #4   19/240 accuracy =   7.9% [  4.6%   2.5%   0.8%   0.0%] skips [ 64.6%   2.1%   0.0%   0.0%]
+Eval global  652/1346 accuracy = 48.4%
+Eval for #1  393/420 accuracy =  93.6% [ 79.0%   6.9%   5.0%   2.6%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  191/380 accuracy =  50.3% [ 36.6%   7.4%   4.5%   1.8%] skips [ 49.2%   3.4%   0.0%   0.0%]
+Eval for #3   69/306 accuracy =  22.5% [ 12.7%   7.5%   2.0%   0.3%] skips [ 50.0%   4.2%   0.0%   0.0%]
+Eval for #4   21/240 accuracy =   8.8% [  4.6%   3.3%   0.8%   0.0%] skips [ 65.8%   2.9%   0.0%   0.0%]
+Eval global  674/1346 accuracy = 50.1%
+Eval for #1  406/420 accuracy =  96.7% [ 83.6%   5.7%   6.0%   1.4%] skips [  5.7%   0.0%   0.0%   0.0%]
+Eval for #2  194/380 accuracy =  51.1% [ 37.9%   7.1%   4.5%   1.6%] skips [ 47.9%   3.9%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 12.7%   5.2%   4.2%   1.0%] skips [ 53.9%   3.6%   0.0%   0.0%]
+Eval for #4   22/240 accuracy =   9.2% [  5.4%   2.9%   0.8%   0.0%] skips [ 69.6%   2.1%   0.0%   0.0%]
+Eval global  693/1346 accuracy = 51.5%
+Eval for #1  413/420 accuracy =  98.3% [ 86.2%   6.7%   3.8%   1.7%] skips [  5.7%   0.0%   0.0%   0.0%]
+Eval for #2  199/380 accuracy =  52.4% [ 38.9%   7.6%   4.2%   1.6%] skips [ 47.6%   5.0%   0.0%   0.0%]
+Eval for #3   69/306 accuracy =  22.5% [ 12.7%   5.9%   3.3%   0.7%] skips [ 55.9%   3.9%   0.0%   0.0%]
+Eval for #4   21/240 accuracy =   8.8% [  5.4%   2.5%   0.8%   0.0%] skips [ 72.9%   3.3%   0.0%   0.0%]
+Eval global  702/1346 accuracy = 52.2%
+Eval for #1  415/420 accuracy =  98.8% [ 87.6%   8.8%   1.4%   1.0%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  197/380 accuracy =  51.8% [ 40.8%   5.3%   4.2%   1.6%] skips [ 48.4%   5.3%   0.0%   0.0%]
+Eval for #3   69/306 accuracy =  22.5% [ 13.4%   5.6%   2.9%   0.7%] skips [ 56.2%   4.2%   0.0%   0.0%]
+Eval for #4   27/240 accuracy =  11.2% [  5.8%   2.5%   2.9%   0.0%] skips [ 74.2%   4.6%   0.0%   0.0%]
+Eval global  708/1346 accuracy = 52.6%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 9 --num_neg_samples 3
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       500
+window_size:      9
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.5%  99.5%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.7%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   42/420 accuracy =  10.0% [  5.5%   1.4%   1.7%   1.4%] skips [ 16.0%   0.2%   0.0%   0.0%]
+Eval for #2   47/380 accuracy =  12.4% [  8.4%   2.1%   1.8%   0.0%] skips [ 40.0%   1.3%   0.0%   0.0%]
+Eval for #3    8/306 accuracy =   2.6% [  1.0%   1.0%   0.3%   0.3%] skips [ 22.5%   0.3%   0.0%   0.0%]
+Eval for #4    2/240 accuracy =   0.8% [  0.8%   0.0%   0.0%   0.0%] skips [ 27.5%   0.0%   0.0%   0.0%]
+Eval global   99/1346 accuracy =  7.4%
+Eval for #1  118/420 accuracy =  28.1% [ 16.9%   5.0%   4.8%   1.4%] skips [ 25.7%   0.2%   0.0%   0.0%]
+Eval for #2  100/380 accuracy =  26.3% [ 17.1%   4.5%   2.4%   2.4%] skips [ 42.1%   0.5%   0.0%   0.0%]
+Eval for #3   15/306 accuracy =   4.9% [  2.6%   1.3%   1.0%   0.0%] skips [ 34.6%   1.0%   0.0%   0.0%]
+Eval for #4    7/240 accuracy =   2.9% [  0.8%   1.7%   0.4%   0.0%] skips [ 42.9%   0.4%   0.0%   0.0%]
+Eval global  240/1346 accuracy = 17.8%
+Eval for #1  250/420 accuracy =  59.5% [ 42.6%   9.5%   6.4%   1.0%] skips [ 17.1%   0.0%   0.0%   0.0%]
+Eval for #2  123/380 accuracy =  32.4% [ 22.6%   3.9%   4.7%   1.1%] skips [ 36.8%   1.8%   0.0%   0.0%]
+Eval for #3   32/306 accuracy =  10.5% [  4.9%   3.6%   0.7%   1.3%] skips [ 39.2%   1.3%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  2.5%   1.2%   0.4%   0.0%] skips [ 55.0%   1.2%   0.0%   0.0%]
+Eval global  415/1346 accuracy = 30.8%
+Eval for #1  317/420 accuracy =  75.5% [ 61.7%   7.6%   3.6%   2.6%] skips [ 10.2%   0.0%   0.0%   0.0%]
+Eval for #2  159/380 accuracy =  41.8% [ 29.5%   6.1%   3.7%   2.6%] skips [ 41.6%   2.1%   0.0%   0.0%]
+Eval for #3   58/306 accuracy =  19.0% [ 12.7%   3.6%   2.0%   0.7%] skips [ 40.2%   2.6%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  3.3%   1.2%   1.2%   0.4%] skips [ 60.4%   1.7%   0.0%   0.0%]
+Eval global  549/1346 accuracy = 40.8%
+Eval for #1  366/420 accuracy =  87.1% [ 69.0%   8.6%   6.0%   3.6%] skips [  9.3%   0.0%   0.0%   0.0%]
+Eval for #2  171/380 accuracy =  45.0% [ 32.9%   5.8%   3.9%   2.4%] skips [ 44.5%   2.1%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 14.7%   3.9%   2.9%   0.0%] skips [ 43.1%   2.6%   0.0%   0.0%]
+Eval for #4   20/240 accuracy =   8.3% [  5.4%   1.2%   1.7%   0.0%] skips [ 61.2%   2.5%   0.0%   0.0%]
+Eval global  623/1346 accuracy = 46.3%
+Eval for #1  393/420 accuracy =  93.6% [ 77.1%   7.6%   6.0%   2.9%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  187/380 accuracy =  49.2% [ 34.7%   7.4%   4.2%   2.9%] skips [ 46.8%   3.2%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 13.7%   4.9%   2.9%   0.7%] skips [ 47.7%   2.6%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  5.8%   1.2%   2.9%   0.4%] skips [ 65.4%   2.5%   0.0%   0.0%]
+Eval global  673/1346 accuracy = 50.0%
+Eval for #1  405/420 accuracy =  96.4% [ 82.6%   6.0%   6.0%   1.9%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  192/380 accuracy =  50.5% [ 34.7%   7.1%   6.1%   2.6%] skips [ 44.5%   4.5%   0.0%   0.0%]
+Eval for #3   77/306 accuracy =  25.2% [ 12.7%   8.2%   3.9%   0.3%] skips [ 52.3%   3.6%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  7.1%   2.5%   2.1%   0.0%] skips [ 68.3%   2.1%   0.0%   0.0%]
+Eval global  702/1346 accuracy = 52.2%
+Eval for #1  412/420 accuracy =  98.1% [ 87.1%   6.2%   4.3%   0.5%] skips [  5.2%   0.0%   0.0%   0.0%]
+Eval for #2  190/380 accuracy =  50.0% [ 37.1%   6.8%   4.5%   1.6%] skips [ 46.1%   5.8%   0.0%   0.0%]
+Eval for #3   77/306 accuracy =  25.2% [ 14.4%   6.9%   2.9%   1.0%] skips [ 55.9%   4.6%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  7.5%   2.5%   1.7%   0.4%] skips [ 72.1%   1.7%   0.0%   0.0%]
+Eval global  708/1346 accuracy = 52.6%
+Eval for #1  415/420 accuracy =  98.8% [ 88.3%   6.2%   2.6%   1.7%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  200/380 accuracy =  52.6% [ 38.7%   7.4%   5.0%   1.6%] skips [ 45.5%   5.3%   0.0%   0.0%]
+Eval for #3   83/306 accuracy =  27.1% [ 13.1%   6.9%   6.5%   0.7%] skips [ 56.9%   4.9%   0.0%   0.0%]
+Eval for #4   27/240 accuracy =  11.2% [  7.1%   2.1%   1.7%   0.4%] skips [ 73.3%   2.9%   0.0%   0.0%]
+Eval global  725/1346 accuracy = 53.9%
+Eval for #1  417/420 accuracy =  99.3% [ 90.2%   4.0%   4.0%   1.0%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  204/380 accuracy =  53.7% [ 39.5%   7.4%   4.7%   2.1%] skips [ 47.4%   5.5%   0.0%   0.0%]
+Eval for #3   79/306 accuracy =  25.8% [ 14.1%   6.5%   4.6%   0.7%] skips [ 59.2%   5.2%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  7.1%   2.9%   1.7%   0.0%] skips [ 74.2%   3.3%   0.0%   0.0%]
+Eval global  728/1346 accuracy = 54.1%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 10 --num_neg_samples 3
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       500
+window_size:      10
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.3%  99.7%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   50/420 accuracy =  11.9% [  5.7%   3.1%   2.4%   0.7%] skips [ 17.6%   0.0%   0.0%   0.0%]
+Eval for #2   59/380 accuracy =  15.5% [  9.2%   2.4%   2.9%   1.1%] skips [ 40.8%   0.5%   0.3%   0.0%]
+Eval for #3    8/306 accuracy =   2.6% [  0.3%   1.6%   0.7%   0.0%] skips [ 31.0%   0.3%   0.0%   0.0%]
+Eval for #4    4/240 accuracy =   1.7% [  0.4%   0.4%   0.4%   0.4%] skips [ 22.1%   0.4%   0.0%   0.0%]
+Eval global  121/1346 accuracy =  9.0%
+Eval for #1  130/420 accuracy =  31.0% [ 18.1%   7.6%   4.3%   1.0%] skips [ 23.6%   0.2%   0.0%   0.0%]
+Eval for #2  117/380 accuracy =  30.8% [ 19.2%   5.3%   4.7%   1.6%] skips [ 38.4%   0.3%   0.0%   0.0%]
+Eval for #3   16/306 accuracy =   5.2% [  2.3%   1.0%   1.0%   1.0%] skips [ 33.3%   1.0%   0.0%   0.0%]
+Eval for #4   11/240 accuracy =   4.6% [  2.1%   1.2%   1.2%   0.0%] skips [ 38.8%   0.8%   0.0%   0.0%]
+Eval global  274/1346 accuracy = 20.4%
+Eval for #1  274/420 accuracy =  65.2% [ 48.6%   7.6%   5.7%   3.3%] skips [ 13.8%   0.0%   0.0%   0.0%]
+Eval for #2  118/380 accuracy =  31.1% [ 22.6%   2.9%   3.2%   2.4%] skips [ 39.5%   1.6%   0.0%   0.0%]
+Eval for #3   35/306 accuracy =  11.4% [  5.6%   2.9%   1.6%   1.3%] skips [ 36.3%   2.3%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  2.9%   0.8%   1.7%   0.0%] skips [ 53.8%   1.7%   0.0%   0.0%]
+Eval global  440/1346 accuracy = 32.7%
+Eval for #1  331/420 accuracy =  78.8% [ 63.8%   7.9%   4.0%   3.1%] skips [  9.8%   0.0%   0.0%   0.0%]
+Eval for #2  151/380 accuracy =  39.7% [ 26.8%   5.0%   6.6%   1.3%] skips [ 44.2%   2.1%   0.0%   0.0%]
+Eval for #3   60/306 accuracy =  19.6% [ 12.1%   3.9%   2.6%   1.0%] skips [ 43.1%   2.6%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  6.7%   1.7%   1.2%   0.8%] skips [ 60.4%   1.7%   0.0%   0.0%]
+Eval global  567/1346 accuracy = 42.1%
+Eval for #1  383/420 accuracy =  91.2% [ 76.0%   7.6%   5.0%   2.6%] skips [  6.7%   0.0%   0.0%   0.0%]
+Eval for #2  173/380 accuracy =  45.5% [ 31.8%   6.8%   4.7%   2.1%] skips [ 46.8%   3.2%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 13.4%   4.2%   4.2%   1.3%] skips [ 46.7%   2.6%   0.0%   0.0%]
+Eval for #4   27/240 accuracy =  11.2% [  6.2%   2.5%   1.7%   0.8%] skips [ 62.5%   1.7%   0.0%   0.0%]
+Eval global  654/1346 accuracy = 48.6%
+Eval for #1  402/420 accuracy =  95.7% [ 79.0%   8.8%   5.2%   2.6%] skips [  4.5%   0.0%   0.0%   0.0%]
+Eval for #2  181/380 accuracy =  47.6% [ 35.5%   7.1%   3.7%   1.3%] skips [ 46.6%   3.9%   0.0%   0.0%]
+Eval for #3   76/306 accuracy =  24.8% [ 13.1%   6.9%   4.2%   0.7%] skips [ 54.2%   3.3%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  8.3%   1.7%   1.7%   0.0%] skips [ 66.7%   2.5%   0.0%   0.0%]
+Eval global  687/1346 accuracy = 51.0%
+Eval for #1  410/420 accuracy =  97.6% [ 86.0%   7.1%   3.6%   1.0%] skips [  4.5%   0.0%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 37.4%   6.3%   3.9%   1.3%] skips [ 45.0%   5.3%   0.0%   0.0%]
+Eval for #3   78/306 accuracy =  25.5% [ 14.7%   7.2%   2.9%   0.7%] skips [ 54.2%   4.6%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  8.3%   1.7%   2.5%   0.0%] skips [ 71.2%   1.2%   0.0%   0.0%]
+Eval global  704/1346 accuracy = 52.3%
+Eval for #1  417/420 accuracy =  99.3% [ 89.0%   6.4%   3.1%   0.7%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  188/380 accuracy =  49.5% [ 37.1%   5.3%   5.3%   1.8%] skips [ 47.9%   6.1%   0.0%   0.0%]
+Eval for #3   78/306 accuracy =  25.5% [ 14.4%   6.2%   4.2%   0.7%] skips [ 58.5%   4.2%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  7.5%   4.2%   1.2%   0.0%] skips [ 72.5%   0.8%   0.0%   0.0%]
+Eval global  714/1346 accuracy = 53.0%
+Eval for #1  417/420 accuracy =  99.3% [ 89.8%   6.4%   2.4%   0.7%] skips [  5.2%   0.0%   0.0%   0.0%]
+Eval for #2  195/380 accuracy =  51.3% [ 38.9%   6.6%   4.2%   1.6%] skips [ 48.2%   5.8%   0.0%   0.0%]
+Eval for #3   79/306 accuracy =  25.8% [ 14.7%   6.2%   4.2%   0.7%] skips [ 61.4%   4.2%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  7.5%   2.9%   2.1%   0.0%] skips [ 75.0%   0.8%   0.0%   0.0%]
+Eval global  721/1346 accuracy = 53.6%
+Eval for #1  419/420 accuracy =  99.8% [ 90.7%   5.0%   3.1%   1.0%] skips [  6.0%   0.0%   0.0%   0.0%]
+Eval for #2  199/380 accuracy =  52.4% [ 39.5%   6.8%   4.2%   1.8%] skips [ 50.3%   6.8%   0.0%   0.0%]
+Eval for #3   78/306 accuracy =  25.5% [ 15.0%   5.9%   3.6%   1.0%] skips [ 61.4%   5.2%   0.0%   0.0%]
+Eval for #4   30/240 accuracy =  12.5% [  7.9%   2.9%   1.7%   0.0%] skips [ 74.2%   1.7%   0.0%   0.0%]
+Eval global  726/1346 accuracy = 53.9%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 9 --num_neg_samples 3 --batch_size 200
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       200
+window_size:      9
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  1.2%  98.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   40/420 accuracy =   9.5% [  4.8%   2.1%   1.9%   0.7%] skips [ 18.1%   0.0%   0.0%   0.0%]
+Eval for #2   53/380 accuracy =  13.9% [  6.6%   5.0%   1.6%   0.8%] skips [ 42.4%   0.5%   0.0%   0.0%]
+Eval for #3    5/306 accuracy =   1.6% [  1.0%   0.3%   0.0%   0.3%] skips [ 22.9%   0.3%   0.0%   0.0%]
+Eval for #4    5/240 accuracy =   2.1% [  1.2%   0.0%   0.8%   0.0%] skips [ 22.9%   0.0%   0.0%   0.0%]
+Eval global  103/1346 accuracy =  7.7%
+Eval for #1  131/420 accuracy =  31.2% [ 17.1%   7.9%   5.2%   1.0%] skips [ 24.5%   0.2%   0.0%   0.0%]
+Eval for #2  106/380 accuracy =  27.9% [ 17.6%   6.3%   2.1%   1.8%] skips [ 40.8%   0.5%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  2.0%   0.7%   1.0%   0.7%] skips [ 33.0%   1.0%   0.0%   0.0%]
+Eval for #4    2/240 accuracy =   0.8% [  0.8%   0.0%   0.0%   0.0%] skips [ 40.4%   0.4%   0.0%   0.0%]
+Eval global  252/1346 accuracy = 18.7%
+Eval for #1  266/420 accuracy =  63.3% [ 46.0%   9.8%   3.6%   4.0%] skips [ 15.5%   0.0%   0.0%   0.0%]
+Eval for #2  122/380 accuracy =  32.1% [ 23.2%   4.5%   3.7%   0.8%] skips [ 38.7%   1.8%   0.0%   0.0%]
+Eval for #3   36/306 accuracy =  11.8% [  5.2%   3.3%   2.3%   1.0%] skips [ 38.9%   1.3%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  2.5%   1.7%   0.8%   0.4%] skips [ 56.2%   1.2%   0.0%   0.0%]
+Eval global  437/1346 accuracy = 32.5%
+Eval for #1  333/420 accuracy =  79.3% [ 63.1%   8.1%   4.0%   4.0%] skips [  9.0%   0.0%   0.0%   0.0%]
+Eval for #2  147/380 accuracy =  38.7% [ 26.8%   6.3%   3.4%   2.1%] skips [ 44.2%   1.8%   0.0%   0.0%]
+Eval for #3   51/306 accuracy =  16.7% [ 10.1%   3.6%   1.0%   2.0%] skips [ 39.2%   2.6%   0.0%   0.0%]
+Eval for #4   17/240 accuracy =   7.1% [  3.8%   2.1%   0.8%   0.4%] skips [ 60.8%   1.2%   0.0%   0.0%]
+Eval global  548/1346 accuracy = 40.7%
+Eval for #1  364/420 accuracy =  86.7% [ 71.9%   7.1%   5.0%   2.6%] skips [  7.4%   0.2%   0.0%   0.0%]
+Eval for #2  173/380 accuracy =  45.5% [ 32.1%   7.9%   3.7%   1.8%] skips [ 44.2%   2.9%   0.0%   0.0%]
+Eval for #3   64/306 accuracy =  20.9% [ 12.7%   4.6%   1.6%   2.0%] skips [ 44.4%   3.3%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  5.4%   3.8%   1.2%   0.0%] skips [ 63.8%   1.7%   0.0%   0.0%]
+Eval global  626/1346 accuracy = 46.5%
+Eval for #1  388/420 accuracy =  92.4% [ 77.9%   6.2%   5.7%   2.6%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  183/380 accuracy =  48.2% [ 33.9%   7.6%   4.2%   2.4%] skips [ 44.2%   4.2%   0.0%   0.0%]
+Eval for #3   62/306 accuracy =  20.3% [ 12.1%   3.9%   3.9%   0.3%] skips [ 47.7%   3.6%   0.0%   0.0%]
+Eval for #4   24/240 accuracy =  10.0% [  5.4%   2.9%   1.2%   0.4%] skips [ 67.5%   1.7%   0.0%   0.0%]
+Eval global  657/1346 accuracy = 48.8%
+Eval for #1  397/420 accuracy =  94.5% [ 82.1%   5.5%   5.2%   1.7%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 35.3%   7.4%   3.9%   2.4%] skips [ 44.5%   5.5%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 13.1%   6.2%   3.6%   1.3%] skips [ 54.2%   4.2%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  5.8%   2.9%   2.9%   0.0%] skips [ 70.4%   1.2%   0.0%   0.0%]
+Eval global  685/1346 accuracy = 50.9%
+Eval for #1  407/420 accuracy =  96.9% [ 86.2%   5.2%   4.8%   0.7%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  194/380 accuracy =  51.1% [ 37.4%   7.6%   4.5%   1.6%] skips [ 47.1%   5.3%   0.0%   0.0%]
+Eval for #3   73/306 accuracy =  23.9% [ 13.1%   6.2%   3.6%   1.0%] skips [ 56.2%   4.6%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  7.1%   2.5%   1.7%   0.4%] skips [ 71.2%   1.7%   0.0%   0.0%]
+Eval global  702/1346 accuracy = 52.2%
+Eval for #1  411/420 accuracy =  97.9% [ 87.4%   6.2%   3.8%   0.5%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  191/380 accuracy =  50.3% [ 38.7%   6.6%   3.7%   1.3%] skips [ 47.6%   4.7%   0.0%   0.0%]
+Eval for #3   69/306 accuracy =  22.5% [ 10.1%   9.2%   2.6%   0.7%] skips [ 56.2%   5.2%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  7.1%   2.1%   2.5%   0.0%] skips [ 73.3%   2.1%   0.0%   0.0%]
+Eval global  699/1346 accuracy = 51.9%
+Eval for #1  418/420 accuracy =  99.5% [ 89.5%   5.7%   3.1%   1.2%] skips [  5.2%   0.0%   0.0%   0.0%]
+Eval for #2  198/380 accuracy =  52.1% [ 39.2%   6.6%   5.0%   1.3%] skips [ 49.5%   5.0%   0.0%   0.0%]
+Eval for #3   71/306 accuracy =  23.2% [ 12.1%   6.9%   2.0%   2.3%] skips [ 57.8%   5.2%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  7.5%   1.7%   2.1%   0.8%] skips [ 74.2%   2.5%   0.0%   0.0%]
+Eval global  716/1346 accuracy = 53.2%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 9 --num_neg_samples 3 --batch_size 100
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       100
+window_size:      9
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.3%  99.7%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   50/420 accuracy =  11.9% [  4.8%   3.6%   2.9%   0.7%] skips [ 16.0%   0.0%   0.0%   0.0%]
+Eval for #2   43/380 accuracy =  11.3% [  7.1%   1.8%   1.6%   0.8%] skips [ 38.7%   1.3%   0.0%   0.0%]
+Eval for #3    8/306 accuracy =   2.6% [  1.3%   0.7%   0.7%   0.0%] skips [ 28.1%   0.3%   0.0%   0.0%]
+Eval for #4    1/240 accuracy =   0.4% [  0.0%   0.0%   0.4%   0.0%] skips [ 25.4%   0.4%   0.0%   0.0%]
+Eval global  102/1346 accuracy =  7.6%
+Eval for #1  118/420 accuracy =  28.1% [ 14.5%   9.0%   2.4%   2.1%] skips [ 28.1%   0.2%   0.0%   0.0%]
+Eval for #2  106/380 accuracy =  27.9% [ 18.4%   2.9%   3.9%   2.6%] skips [ 42.1%   0.8%   0.0%   0.0%]
+Eval for #3   13/306 accuracy =   4.2% [  2.0%   1.3%   0.7%   0.3%] skips [ 33.3%   0.7%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  2.9%   0.4%   0.4%   0.0%] skips [ 40.0%   0.8%   0.0%   0.0%]
+Eval global  246/1346 accuracy = 18.3%
+Eval for #1  257/420 accuracy =  61.2% [ 42.1%  10.5%   4.5%   4.0%] skips [ 17.1%   0.0%   0.0%   0.0%]
+Eval for #2  124/380 accuracy =  32.6% [ 23.4%   4.5%   2.6%   2.1%] skips [ 39.5%   2.1%   0.0%   0.0%]
+Eval for #3   31/306 accuracy =  10.1% [  5.2%   2.6%   1.6%   0.7%] skips [ 38.2%   1.3%   0.0%   0.0%]
+Eval for #4   14/240 accuracy =   5.8% [  2.9%   0.8%   1.7%   0.4%] skips [ 52.5%   1.7%   0.0%   0.0%]
+Eval global  426/1346 accuracy = 31.6%
+Eval for #1  329/420 accuracy =  78.3% [ 62.1%   6.9%   5.7%   3.6%] skips [ 11.4%   0.0%   0.0%   0.0%]
+Eval for #2  156/380 accuracy =  41.1% [ 27.1%   8.4%   3.7%   1.8%] skips [ 43.4%   2.1%   0.0%   0.0%]
+Eval for #3   61/306 accuracy =  19.9% [  9.5%   5.6%   2.6%   2.3%] skips [ 41.2%   2.3%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  3.8%   1.2%   0.4%   0.0%] skips [ 60.0%   1.7%   0.0%   0.0%]
+Eval global  559/1346 accuracy = 41.5%
+Eval for #1  364/420 accuracy =  86.7% [ 71.7%   6.4%   3.6%   5.0%] skips [  9.5%   0.2%   0.0%   0.0%]
+Eval for #2  171/380 accuracy =  45.0% [ 32.4%   7.4%   4.2%   1.1%] skips [ 44.2%   2.4%   0.0%   0.0%]
+Eval for #3   69/306 accuracy =  22.5% [ 12.1%   5.6%   3.9%   1.0%] skips [ 45.8%   2.3%   0.0%   0.0%]
+Eval for #4   21/240 accuracy =   8.8% [  4.2%   1.7%   2.5%   0.4%] skips [ 62.5%   1.7%   0.0%   0.0%]
+Eval global  625/1346 accuracy = 46.4%
+Eval for #1  394/420 accuracy =  93.8% [ 77.9%   9.0%   4.3%   2.6%] skips [  6.4%   0.0%   0.0%   0.0%]
+Eval for #2  177/380 accuracy =  46.6% [ 35.3%   5.3%   5.5%   0.5%] skips [ 45.0%   3.7%   0.0%   0.0%]
+Eval for #3   65/306 accuracy =  21.2% [ 12.1%   4.9%   3.9%   0.3%] skips [ 49.7%   3.3%   0.0%   0.0%]
+Eval for #4   22/240 accuracy =   9.2% [  5.0%   2.1%   2.1%   0.0%] skips [ 67.1%   2.1%   0.0%   0.0%]
+Eval global  658/1346 accuracy = 48.9%
+Eval for #1  399/420 accuracy =  95.0% [ 81.7%   6.9%   4.5%   1.9%] skips [  6.9%   0.0%   0.0%   0.0%]
+Eval for #2  193/380 accuracy =  50.8% [ 36.1%   7.6%   5.5%   1.6%] skips [ 42.6%   3.9%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 12.4%   7.2%   3.3%   1.3%] skips [ 53.3%   4.2%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  6.7%   1.7%   2.5%   0.0%] skips [ 70.0%   1.7%   0.0%   0.0%]
+Eval global  692/1346 accuracy = 51.4%
+Eval for #1  412/420 accuracy =  98.1% [ 86.0%   7.1%   2.6%   2.4%] skips [  5.5%   0.0%   0.0%   0.0%]
+Eval for #2  197/380 accuracy =  51.8% [ 38.4%   6.8%   5.3%   1.3%] skips [ 46.6%   4.5%   0.0%   0.0%]
+Eval for #3   76/306 accuracy =  24.8% [ 13.1%   5.9%   5.2%   0.7%] skips [ 56.9%   4.2%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  6.2%   2.5%   1.2%   0.4%] skips [ 72.1%   2.5%   0.0%   0.0%]
+Eval global  710/1346 accuracy = 52.7%
+Eval for #1  415/420 accuracy =  98.8% [ 87.1%   7.1%   2.6%   1.9%] skips [  6.0%   0.0%   0.0%   0.0%]
+Eval for #2  201/380 accuracy =  52.9% [ 41.1%   7.4%   2.9%   1.6%] skips [ 45.8%   3.9%   0.0%   0.0%]
+Eval for #3   73/306 accuracy =  23.9% [ 12.7%   5.9%   4.9%   0.3%] skips [ 58.5%   4.2%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  7.1%   1.2%   2.5%   0.0%] skips [ 72.9%   4.2%   0.0%   0.0%]
+Eval global  715/1346 accuracy = 53.1%
+Eval for #1  418/420 accuracy =  99.5% [ 89.3%   6.7%   2.6%   1.0%] skips [  5.7%   0.0%   0.0%   0.0%]
+Eval for #2  198/380 accuracy =  52.1% [ 41.1%   6.3%   3.2%   1.6%] skips [ 48.2%   4.2%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 13.1%   7.2%   3.6%   0.3%] skips [ 62.1%   4.9%   0.0%   0.0%]
+Eval for #4   28/240 accuracy =  11.7% [  6.7%   2.5%   2.5%   0.0%] skips [ 73.8%   4.2%   0.0%   0.0%]
+Eval global  718/1346 accuracy = 53.3%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 9 --num_neg_samples 3 --batch_size 2000
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       2000
+window_size:      9
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   43/420 accuracy =  10.2% [  5.2%   2.6%   1.2%   1.2%] skips [ 16.4%   0.0%   0.0%   0.0%]
+Eval for #2   45/380 accuracy =  11.8% [  5.5%   3.4%   2.6%   0.3%] skips [ 42.6%   0.8%   0.0%   0.0%]
+Eval for #3    7/306 accuracy =   2.3% [  0.7%   1.6%   0.0%   0.0%] skips [ 23.9%   0.3%   0.0%   0.0%]
+Eval for #4    3/240 accuracy =   1.2% [  0.0%   0.4%   0.8%   0.0%] skips [ 28.3%   0.4%   0.0%   0.0%]
+Eval global   98/1346 accuracy =  7.3%
+Eval for #1  116/420 accuracy =  27.6% [ 15.5%   6.2%   4.0%   1.9%] skips [ 25.5%   0.2%   0.0%   0.0%]
+Eval for #2  101/380 accuracy =  26.6% [ 18.2%   4.7%   2.1%   1.6%] skips [ 39.2%   0.8%   0.0%   0.0%]
+Eval for #3   11/306 accuracy =   3.6% [  1.3%   1.3%   1.0%   0.0%] skips [ 31.4%   1.0%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  2.5%   0.4%   0.8%   0.0%] skips [ 44.2%   0.4%   0.0%   0.0%]
+Eval global  237/1346 accuracy = 17.6%
+Eval for #1  251/420 accuracy =  59.8% [ 43.8%   8.1%   5.2%   2.6%] skips [ 20.2%   0.0%   0.0%   0.0%]
+Eval for #2  117/380 accuracy =  30.8% [ 21.3%   4.2%   3.9%   1.3%] skips [ 38.4%   2.1%   0.0%   0.0%]
+Eval for #3   30/306 accuracy =   9.8% [  4.2%   2.9%   2.0%   0.7%] skips [ 35.0%   1.6%   0.0%   0.0%]
+Eval for #4   14/240 accuracy =   5.8% [  2.9%   2.1%   0.8%   0.0%] skips [ 52.9%   0.8%   0.0%   0.0%]
+Eval global  412/1346 accuracy = 30.6%
+Eval for #1  310/420 accuracy =  73.8% [ 57.9%   9.3%   3.6%   3.1%] skips [ 11.9%   0.0%   0.0%   0.0%]
+Eval for #2  159/380 accuracy =  41.8% [ 29.2%   5.0%   5.8%   1.8%] skips [ 42.9%   2.1%   0.0%   0.0%]
+Eval for #3   54/306 accuracy =  17.6% [ 10.8%   4.2%   1.3%   1.3%] skips [ 40.2%   2.3%   0.0%   0.0%]
+Eval for #4   16/240 accuracy =   6.7% [  3.3%   1.2%   1.7%   0.4%] skips [ 60.8%   1.2%   0.0%   0.0%]
+Eval global  539/1346 accuracy = 40.0%
+Eval for #1  356/420 accuracy =  84.8% [ 70.2%   6.0%   5.7%   2.9%] skips [  9.8%   0.0%   0.0%   0.0%]
+Eval for #2  175/380 accuracy =  46.1% [ 31.3%   8.7%   3.9%   2.1%] skips [ 43.7%   2.6%   0.0%   0.0%]
+Eval for #3   66/306 accuracy =  21.6% [ 12.4%   3.3%   4.6%   1.3%] skips [ 44.8%   2.6%   0.0%   0.0%]
+Eval for #4   24/240 accuracy =  10.0% [  4.2%   4.2%   1.7%   0.0%] skips [ 65.0%   1.2%   0.0%   0.0%]
+Eval global  621/1346 accuracy = 46.1%
+Eval for #1  388/420 accuracy =  92.4% [ 75.5%   8.6%   6.0%   2.4%] skips [  6.9%   0.0%   0.0%   0.0%]
+Eval for #2  175/380 accuracy =  46.1% [ 32.4%   8.2%   4.7%   0.8%] skips [ 46.1%   4.2%   0.0%   0.0%]
+Eval for #3   62/306 accuracy =  20.3% [ 13.1%   3.6%   2.9%   0.7%] skips [ 48.7%   3.3%   0.0%   0.0%]
+Eval for #4   26/240 accuracy =  10.8% [  6.2%   2.5%   1.2%   0.8%] skips [ 65.0%   2.1%   0.0%   0.0%]
+Eval global  651/1346 accuracy = 48.4%
+Eval for #1  400/420 accuracy =  95.2% [ 80.7%   6.9%   4.5%   3.1%] skips [  6.7%   0.0%   0.0%   0.0%]
+Eval for #2  178/380 accuracy =  46.8% [ 34.2%   7.6%   4.7%   0.3%] skips [ 43.2%   5.0%   0.0%   0.0%]
+Eval for #3   68/306 accuracy =  22.2% [ 11.4%   5.9%   4.9%   0.0%] skips [ 54.2%   3.6%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  8.8%   3.3%   0.8%   0.0%] skips [ 68.8%   2.1%   0.0%   0.0%]
+Eval global  677/1346 accuracy = 50.3%
+Eval for #1  410/420 accuracy =  97.6% [ 85.7%   6.4%   3.8%   1.7%] skips [  5.7%   0.0%   0.0%   0.0%]
+Eval for #2  179/380 accuracy =  47.1% [ 35.0%   8.7%   3.2%   0.3%] skips [ 45.8%   5.0%   0.0%   0.0%]
+Eval for #3   73/306 accuracy =  23.9% [ 12.4%   6.2%   3.9%   1.3%] skips [ 55.9%   4.9%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  9.2%   2.1%   1.2%   0.4%] skips [ 69.6%   3.3%   0.0%   0.0%]
+Eval global  693/1346 accuracy = 51.5%
+Eval for #1  411/420 accuracy =  97.9% [ 87.6%   6.2%   2.9%   1.2%] skips [  5.5%   0.0%   0.0%   0.0%]
+Eval for #2  186/380 accuracy =  48.9% [ 36.8%   7.1%   4.5%   0.5%] skips [ 47.6%   4.5%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 10.8%   6.5%   5.6%   0.7%] skips [ 56.5%   5.6%   0.0%   0.0%]
+Eval for #4   32/240 accuracy =  13.3% [  8.8%   1.7%   2.9%   0.0%] skips [ 72.1%   3.8%   0.0%   0.0%]
+Eval global  701/1346 accuracy = 52.1%
+Eval for #1  415/420 accuracy =  98.8% [ 89.5%   6.2%   2.4%   0.7%] skips [  5.2%   0.0%   0.0%   0.0%]
+Eval for #2  191/380 accuracy =  50.3% [ 38.2%   7.1%   3.7%   1.3%] skips [ 49.5%   4.7%   0.0%   0.0%]
+Eval for #3   70/306 accuracy =  22.9% [ 11.8%   6.9%   3.3%   1.0%] skips [ 58.8%   6.2%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  8.8%   2.5%   0.8%   0.0%] skips [ 72.5%   3.8%   0.0%   0.0%]
+Eval global  705/1346 accuracy = 52.4%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run --epochs_to_train 10 --embedding_size 100 --learning_rate 0.005 --window_size 9 --num_neg_samples 3 --batch_size 5000
+====================
+embedding_size:   100
+epochs_to_train:  10
+learning_rate:    0.005
+num_neg_samples:  3
+batch_size:       5000
+window_size:      9
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.2%  99.8%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  0.8%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1   60/420 accuracy =  14.3% [  6.2%   3.1%   4.3%   0.7%] skips [ 15.7%   0.2%   0.0%   0.0%]
+Eval for #2   46/380 accuracy =  12.1% [  7.4%   3.4%   1.1%   0.3%] skips [ 39.7%   1.1%   0.0%   0.0%]
+Eval for #3    6/306 accuracy =   2.0% [  1.3%   0.7%   0.0%   0.0%] skips [ 24.5%   0.3%   0.0%   0.0%]
+Eval for #4    3/240 accuracy =   1.2% [  1.2%   0.0%   0.0%   0.0%] skips [ 24.6%   0.0%   0.0%   0.0%]
+Eval global  115/1346 accuracy =  8.5%
+Eval for #1  113/420 accuracy =  26.9% [ 14.3%   7.1%   3.3%   2.1%] skips [ 28.1%   0.2%   0.0%   0.0%]
+Eval for #2  103/380 accuracy =  27.1% [ 17.6%   5.5%   2.4%   1.6%] skips [ 41.1%   0.3%   0.0%   0.0%]
+Eval for #3   11/306 accuracy =   3.6% [  1.6%   1.0%   0.3%   0.7%] skips [ 31.7%   0.7%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  2.1%   1.2%   0.4%   0.4%] skips [ 43.8%   0.0%   0.0%   0.0%]
+Eval global  237/1346 accuracy = 17.6%
+Eval for #1  257/420 accuracy =  61.2% [ 42.9%   9.3%   5.7%   3.3%] skips [ 17.1%   0.0%   0.0%   0.0%]
+Eval for #2  125/380 accuracy =  32.9% [ 21.8%   4.2%   4.7%   2.1%] skips [ 38.4%   1.8%   0.0%   0.0%]
+Eval for #3   35/306 accuracy =  11.4% [  3.9%   5.2%   2.0%   0.3%] skips [ 38.9%   1.6%   0.0%   0.0%]
+Eval for #4   12/240 accuracy =   5.0% [  2.1%   2.1%   0.8%   0.0%] skips [ 53.8%   0.4%   0.0%   0.0%]
+Eval global  429/1346 accuracy = 31.9%
+Eval for #1  317/420 accuracy =  75.5% [ 58.8%   8.1%   5.5%   3.1%] skips [ 11.2%   0.0%   0.0%   0.0%]
+Eval for #2  158/380 accuracy =  41.6% [ 30.3%   6.6%   3.4%   1.3%] skips [ 39.7%   1.6%   0.0%   0.0%]
+Eval for #3   55/306 accuracy =  18.0% [ 10.8%   3.6%   2.3%   1.3%] skips [ 41.5%   2.6%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  2.5%   3.3%   0.4%   0.0%] skips [ 61.2%   1.7%   0.0%   0.0%]
+Eval global  545/1346 accuracy = 40.5%
+Eval for #1  358/420 accuracy =  85.2% [ 68.8%   7.9%   5.2%   3.3%] skips [  8.8%   0.0%   0.0%   0.0%]
+Eval for #2  174/380 accuracy =  45.8% [ 31.6%   7.9%   4.5%   1.8%] skips [ 42.9%   3.2%   0.0%   0.0%]
+Eval for #3   70/306 accuracy =  22.9% [ 13.4%   4.6%   4.2%   0.7%] skips [ 44.8%   2.6%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  5.0%   2.1%   2.9%   0.4%] skips [ 62.9%   2.1%   0.0%   0.0%]
+Eval global  627/1346 accuracy = 46.6%
+Eval for #1  385/420 accuracy =  91.7% [ 76.2%   7.4%   4.8%   3.3%] skips [  6.7%   0.2%   0.0%   0.0%]
+Eval for #2  182/380 accuracy =  47.9% [ 33.7%   8.2%   5.3%   0.8%] skips [ 45.0%   3.4%   0.0%   0.0%]
+Eval for #3   70/306 accuracy =  22.9% [ 11.4%   5.9%   5.2%   0.3%] skips [ 48.0%   2.9%   0.0%   0.0%]
+Eval for #4   25/240 accuracy =  10.4% [  5.8%   1.2%   2.5%   0.8%] skips [ 65.0%   2.9%   0.0%   0.0%]
+Eval global  662/1346 accuracy = 49.2%
+Eval for #1  402/420 accuracy =  95.7% [ 80.5%   7.6%   4.3%   3.3%] skips [  6.2%   0.0%   0.0%   0.0%]
+Eval for #2  188/380 accuracy =  49.5% [ 34.2%   8.4%   5.0%   1.8%] skips [ 44.5%   4.7%   0.0%   0.0%]
+Eval for #3   75/306 accuracy =  24.5% [ 10.8%   9.8%   3.3%   0.7%] skips [ 52.6%   4.2%   0.0%   0.0%]
+Eval for #4   31/240 accuracy =  12.9% [  8.3%   2.1%   2.1%   0.4%] skips [ 70.8%   1.2%   0.0%   0.0%]
+Eval global  696/1346 accuracy = 51.7%
+Eval for #1  414/420 accuracy =  98.6% [ 85.7%   8.6%   3.1%   1.2%] skips [  5.5%   0.0%   0.0%   0.0%]
+Eval for #2  192/380 accuracy =  50.5% [ 36.8%   7.1%   5.3%   1.3%] skips [ 47.1%   4.5%   0.0%   0.0%]
+Eval for #3   75/306 accuracy =  24.5% [ 12.4%   9.2%   2.6%   0.3%] skips [ 54.2%   4.9%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  7.9%   2.1%   2.1%   0.0%] skips [ 71.2%   2.1%   0.0%   0.0%]
+Eval global  710/1346 accuracy = 52.7%
+Eval for #1  415/420 accuracy =  98.8% [ 88.1%   7.9%   2.6%   0.2%] skips [  5.2%   0.0%   0.0%   0.0%]
+Eval for #2  196/380 accuracy =  51.6% [ 37.6%   8.2%   4.7%   1.1%] skips [ 48.7%   4.7%   0.0%   0.0%]
+Eval for #3   72/306 accuracy =  23.5% [ 12.4%   7.2%   3.6%   0.3%] skips [ 54.2%   5.2%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  6.7%   2.9%   2.5%   0.0%] skips [ 72.1%   2.9%   0.0%   0.0%]
+Eval global  712/1346 accuracy = 52.9%
+Eval for #1  418/420 accuracy =  99.5% [ 89.5%   7.1%   2.4%   0.5%] skips [  5.0%   0.0%   0.0%   0.0%]
+Eval for #2  197/380 accuracy =  51.8% [ 37.6%   8.4%   4.5%   1.3%] skips [ 48.9%   5.0%   0.0%   0.0%]
+Eval for #3   74/306 accuracy =  24.2% [ 12.1%   8.5%   3.6%   0.0%] skips [ 58.5%   4.6%   0.0%   0.0%]
+Eval for #4   29/240 accuracy =  12.1% [  6.7%   3.8%   1.7%   0.0%] skips [ 73.8%   3.3%   0.0%   0.0%]
+Eval global  718/1346 accuracy = 53.3%
+$ /usr/bin/python3 word2vec_optimized.py --train_data input/text-words.txt --eval_data input/questions-%d.txt --dry_run
+====================
+embedding_size:   200
+epochs_to_train:  15
+learning_rate:    0.025
+num_neg_samples:  25
+batch_size:       500
+window_size:      5
+subsample:        0.001
+====================
+Data file: input/text-words.txt
+Vocab size: 33468 + UNK
+Words per epoch: 2168725
+Eval analogy file: "input/questions-1.txt", questions  420, skipped 0
+Eval analogy file: "input/questions-2.txt", questions  380, skipped 0
+Eval analogy file: "input/questions-3.txt", questions  306, skipped 0
+Eval analogy file: "input/questions-4.txt", questions  240, skipped 0
+Eval for #1    0/420 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #2    2/380 accuracy =   0.5% [  0.5%   0.0%   0.0%   0.0%] skips [  1.1%  98.9%   0.0%   0.0%]
+Eval for #3    0/306 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval for #4    0/240 accuracy =   0.0% [  0.0%   0.0%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global    2/1346 accuracy =  0.1%
+Eval for #1  291/420 accuracy =  69.3% [ 50.7%  10.0%   6.7%   1.9%] skips [ 52.1%   2.4%   0.0%   0.0%]
+Eval for #2  100/380 accuracy =  26.3% [ 20.8%   4.2%   1.1%   0.3%] skips [ 57.4%  21.3%   0.0%   0.0%]
+Eval for #3   24/306 accuracy =   7.8% [  5.6%   1.6%   0.3%   0.3%] skips [ 59.2%  18.3%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  3.3%   0.4%   0.0%   0.0%] skips [ 78.3%  10.8%   0.0%   0.0%]
+Eval global  424/1346 accuracy = 31.5%
+Eval for #1  362/420 accuracy =  86.2% [ 70.2%  11.7%   4.3%   0.0%] skips [ 65.0%   7.1%   0.0%   0.0%]
+Eval for #2   67/380 accuracy =  17.6% [ 11.8%   5.3%   0.3%   0.3%] skips [ 43.9%  53.9%   0.0%   0.0%]
+Eval for #3   23/306 accuracy =   7.5% [  3.9%   2.3%   1.3%   0.0%] skips [ 58.2%  38.6%   0.0%   0.0%]
+Eval for #4   16/240 accuracy =   6.7% [  5.0%   1.7%   0.0%   0.0%] skips [ 63.8%  35.0%   0.0%   0.0%]
+Eval global  468/1346 accuracy = 34.8%
+Eval for #1  353/420 accuracy =  84.0% [ 68.8%  12.6%   2.4%   0.2%] skips [ 73.8%  17.6%   0.0%   0.0%]
+Eval for #2   42/380 accuracy =  11.1% [  8.9%   1.3%   0.8%   0.0%] skips [ 23.2%  76.1%   0.0%   0.0%]
+Eval for #3   18/306 accuracy =   5.9% [  3.9%   1.6%   0.3%   0.0%] skips [ 39.2%  60.5%   0.0%   0.0%]
+Eval for #4   18/240 accuracy =   7.5% [  4.6%   2.5%   0.4%   0.0%] skips [ 41.2%  58.8%   0.0%   0.0%]
+Eval global  431/1346 accuracy = 32.0%
+Eval for #1  346/420 accuracy =  82.4% [ 71.9%   9.0%   1.4%   0.0%] skips [ 71.0%  27.6%   0.0%   0.0%]
+Eval for #2   41/380 accuracy =  10.8% [  7.9%   2.9%   0.0%   0.0%] skips [ 11.1%  88.7%   0.0%   0.0%]
+Eval for #3    8/306 accuracy =   2.6% [  2.0%   0.7%   0.0%   0.0%] skips [ 23.2%  76.8%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  3.3%   0.8%   0.0%   0.0%] skips [ 24.6%  75.4%   0.0%   0.0%]
+Eval global  405/1346 accuracy = 30.1%
+Eval for #1  323/420 accuracy =  76.9% [ 66.0%   8.8%   2.1%   0.0%] skips [ 60.7%  39.3%   0.0%   0.0%]
+Eval for #2   58/380 accuracy =  15.3% [ 12.6%   2.4%   0.3%   0.0%] skips [ 10.3%  89.5%   0.0%   0.0%]
+Eval for #3    8/306 accuracy =   2.6% [  2.6%   0.0%   0.0%   0.0%] skips [  9.5%  90.5%   0.0%   0.0%]
+Eval for #4    8/240 accuracy =   3.3% [  2.1%   1.2%   0.0%   0.0%] skips [ 13.8%  86.2%   0.0%   0.0%]
+Eval global  397/1346 accuracy = 29.5%
+Eval for #1  317/420 accuracy =  75.5% [ 66.2%   7.6%   1.7%   0.0%] skips [ 55.2%  44.8%   0.0%   0.0%]
+Eval for #2   54/380 accuracy =  14.2% [ 11.1%   3.2%   0.0%   0.0%] skips [  8.2%  91.6%   0.0%   0.0%]
+Eval for #3    3/306 accuracy =   1.0% [  0.7%   0.3%   0.0%   0.0%] skips [  4.9%  95.1%   0.0%   0.0%]
+Eval for #4   12/240 accuracy =   5.0% [  2.5%   2.5%   0.0%   0.0%] skips [  6.7%  93.3%   0.0%   0.0%]
+Eval global  386/1346 accuracy = 28.7%
+Eval for #1  331/420 accuracy =  78.8% [ 69.5%   6.4%   2.9%   0.0%] skips [ 55.7%  44.3%   0.0%   0.0%]
+Eval for #2   59/380 accuracy =  15.5% [ 12.6%   2.9%   0.0%   0.0%] skips [  7.9%  91.8%   0.0%   0.0%]
+Eval for #3    5/306 accuracy =   1.6% [  1.3%   0.3%   0.0%   0.0%] skips [  2.0%  98.0%   0.0%   0.0%]
+Eval for #4   11/240 accuracy =   4.6% [  1.7%   2.9%   0.0%   0.0%] skips [  3.3%  96.7%   0.0%   0.0%]
+Eval global  406/1346 accuracy = 30.2%
+Eval for #1  319/420 accuracy =  76.0% [ 67.1%   7.1%   1.7%   0.0%] skips [ 46.4%  53.6%   0.0%   0.0%]
+Eval for #2   62/380 accuracy =  16.3% [ 12.9%   3.4%   0.0%   0.0%] skips [  6.8%  92.9%   0.0%   0.0%]
+Eval for #3    2/306 accuracy =   0.7% [  0.3%   0.3%   0.0%   0.0%] skips [  1.6%  98.4%   0.0%   0.0%]
+Eval for #4   14/240 accuracy =   5.8% [  3.3%   2.5%   0.0%   0.0%] skips [  2.1%  97.9%   0.0%   0.0%]
+Eval global  397/1346 accuracy = 29.5%
+Eval for #1  323/420 accuracy =  76.9% [ 67.6%   7.6%   1.7%   0.0%] skips [ 44.8%  55.2%   0.0%   0.0%]
+Eval for #2   71/380 accuracy =  18.7% [ 16.8%   1.8%   0.0%   0.0%] skips [  6.8%  92.9%   0.0%   0.0%]
+Eval for #3    4/306 accuracy =   1.3% [  1.0%   0.3%   0.0%   0.0%] skips [  1.3%  98.7%   0.0%   0.0%]
+Eval for #4   13/240 accuracy =   5.4% [  3.3%   2.1%   0.0%   0.0%] skips [  1.2%  98.8%   0.0%   0.0%]
+Eval global  411/1346 accuracy = 30.5%
+Eval for #1  327/420 accuracy =  77.9% [ 69.0%   8.3%   0.5%   0.0%] skips [ 42.1%  57.9%   0.0%   0.0%]
+Eval for #2   88/380 accuracy =  23.2% [ 19.5%   3.7%   0.0%   0.0%] skips [  6.1%  93.7%   0.0%   0.0%]
+Eval for #3    5/306 accuracy =   1.6% [  1.0%   0.7%   0.0%   0.0%] skips [  1.6%  98.4%   0.0%   0.0%]
+Eval for #4   11/240 accuracy =   4.6% [  1.7%   2.9%   0.0%   0.0%] skips [  0.8%  99.2%   0.0%   0.0%]
+Eval global  431/1346 accuracy = 32.0%
+Eval for #1  336/420 accuracy =  80.0% [ 71.2%   8.3%   0.5%   0.0%] skips [ 39.3%  60.5%   0.0%   0.0%]
+Eval for #2   80/380 accuracy =  21.1% [ 17.9%   3.2%   0.0%   0.0%] skips [  7.4%  92.4%   0.0%   0.0%]
+Eval for #3    6/306 accuracy =   2.0% [  1.3%   0.7%   0.0%   0.0%] skips [  1.6%  98.4%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  2.9%   1.2%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global  432/1346 accuracy = 32.1%
+Eval for #1  333/420 accuracy =  79.3% [ 71.7%   7.1%   0.5%   0.0%] skips [ 39.3%  60.7%   0.0%   0.0%]
+Eval for #2   87/380 accuracy =  22.9% [ 17.6%   5.3%   0.0%   0.0%] skips [  6.3%  93.4%   0.0%   0.0%]
+Eval for #3    7/306 accuracy =   2.3% [  1.6%   0.7%   0.0%   0.0%] skips [  1.6%  98.4%   0.0%   0.0%]
+Eval for #4    8/240 accuracy =   3.3% [  2.5%   0.8%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global  435/1346 accuracy = 32.3%
+Eval for #1  338/420 accuracy =  80.5% [ 72.4%   7.9%   0.2%   0.0%] skips [ 39.3%  60.7%   0.0%   0.0%]
+Eval for #2   99/380 accuracy =  26.1% [ 22.4%   3.4%   0.3%   0.0%] skips [  7.9%  91.8%   0.0%   0.0%]
+Eval for #3    6/306 accuracy =   2.0% [  2.0%   0.0%   0.0%   0.0%] skips [  1.0%  99.0%   0.0%   0.0%]
+Eval for #4    9/240 accuracy =   3.8% [  2.5%   1.2%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global  452/1346 accuracy = 33.6%
+Eval for #1  350/420 accuracy =  83.3% [ 77.4%   5.5%   0.5%   0.0%] skips [ 37.9%  62.1%   0.0%   0.0%]
+Eval for #2   94/380 accuracy =  24.7% [ 20.0%   4.7%   0.0%   0.0%] skips [  8.7%  90.8%   0.0%   0.0%]
+Eval for #3   10/306 accuracy =   3.3% [  2.3%   1.0%   0.0%   0.0%] skips [  2.0%  98.0%   0.0%   0.0%]
+Eval for #4   10/240 accuracy =   4.2% [  2.5%   1.7%   0.0%   0.0%] skips [  0.0% 100.0%   0.0%   0.0%]
+Eval global  464/1346 accuracy = 34.5%
+Eval for #1  347/420 accuracy =  82.6% [ 74.8%   7.4%   0.5%   0.0%] skips [ 41.0%  59.0%   0.0%   0.0%]
+Eval for #2  101/380 accuracy =  26.6% [ 21.1%   5.5%   0.0%   0.0%] skips [  9.7%  90.0%   0.0%   0.0%]
+Eval for #3   10/306 accuracy =   3.3% [  2.6%   0.7%   0.0%   0.0%] skips [  1.3%  98.7%   0.0%   0.0%]
+Eval for #4   15/240 accuracy =   6.2% [  4.2%   2.1%   0.0%   0.0%] skips [  0.4%  99.6%   0.0%   0.0%]
+Eval global  473/1346 accuracy = 35.1%
